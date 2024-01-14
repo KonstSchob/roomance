@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'import.dart';
+import '../import.dart';
 
 // -----------------------------------------------SEITE CHAT-----------------------------------------//
 
@@ -127,72 +127,72 @@ class Chat extends StatelessWidget {
         ],
       ),
 
-      //----------------------------------- NAVIGATIONSLEISTE----------------------------------//
-      bottomNavigationBar: SizedBox(
-        height: 60,
-        child: BottomAppBar(
-          color: Colors.white,
-          elevation: 8,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              buildIconButton(
-                label: 'Matches',
-                imagePath: 'assets/images/Matches.png',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Matches()),
-                  );
-                },
-              ),
-              buildIconButton(
-                label: 'Entdecken',
-                imagePath: 'assets/images/Entdecken.png',
-                scale: 1,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
-                  );
-                },
-              ),
-              buildIconButton(
-                label: 'Logo3',
-                imagePath: 'assets/images/logo3.png',
-                scale: 1.5,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Swipen()),
-                  );
-                },
-              ),
-              buildIconButton(
-                label: 'Chat',
-                imagePath: 'assets/images/Chat.png',
-                scale: 1.2,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Chat()),
-                  );
-                },
-              ),
-              buildIconButton(
-                label: 'Profil',
-                imagePath: 'assets/images/Profil.png',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+      // //----------------------------------- NAVIGATIONSLEISTE----------------------------------//
+      // bottomNavigationBar: SizedBox(
+      //   height: 60,
+      //   child: BottomAppBar(
+      //     color: Colors.white,
+      //     elevation: 8,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: [
+      //         buildIconButton(
+      //           label: 'Matches',
+      //           imagePath: 'assets/images/Matches.png',
+      //           onPressed: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => const Matches()),
+      //             );
+      //           },
+      //         ),
+      //         buildIconButton(
+      //           label: 'Entdecken',
+      //           imagePath: 'assets/images/Entdecken.png',
+      //           scale: 1,
+      //           onPressed: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
+      //             );
+      //           },
+      //         ),
+      //         buildIconButton(
+      //           label: 'Logo3',
+      //           imagePath: 'assets/images/logo3.png',
+      //           scale: 1.5,
+      //           onPressed: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => const Swipen()),
+      //             );
+      //           },
+      //         ),
+      //         buildIconButton(
+      //           label: 'Chat',
+      //           imagePath: 'assets/images/Chat.png',
+      //           scale: 1.2,
+      //           onPressed: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => const Chat()),
+      //             );
+      //           },
+      //         ),
+      //         buildIconButton(
+      //           label: 'Profil',
+      //           imagePath: 'assets/images/Profil.png',
+      //           onPressed: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
+      //             );
+      //           },
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 

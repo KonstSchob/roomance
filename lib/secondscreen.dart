@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roomance/navigation.dart';
 import 'import.dart';
 
 //--------------------------------- Start Seite 2 mit Anmeldung --------------------------------//
@@ -35,7 +36,7 @@ class SecondScreen extends StatelessWidget {
                                   // Button Funktion zur nächsten Seite
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const EntdeckenScreen()),  // LOG IN zur nächsten Seite
+                      MaterialPageRoute(builder: (context) => const BottomNavBar()),  // LOG IN zur nächsten Seite -> Navigationsseite
                     );
                   },
                   style: ElevatedButton.styleFrom(

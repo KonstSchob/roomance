@@ -22,19 +22,19 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]) // Wichtig für Portrait
       .then((_) {
-    runApp(const Roomance1());
+    runApp(const Roomance());
   });
 }
 
-class Roomance1 extends StatelessWidget {
-  const Roomance1({Key? key});
+class Roomance extends StatelessWidget {
+  const Roomance({Key? key});
 
   @override
   Widget build(BuildContext context) {
     // App-Konfiguration
     return const MaterialApp(
       
-      home: Scaffold(body: Startseite1()),
+      home: Startseite1(), //SOLLTE HOMESCREEN (Entdecken) SEIN
     );
   }
 }
@@ -47,4 +47,4 @@ class Roomance1 extends StatelessWidget {
 
 // TODO Seiten: Einstellungen/ Matches / Profil
 
-// TODO Mehr dynamische Positionierungen -> Erledigt .ML
+// TODO Mehr dynamische Positionierungen -> Erledigt .ML -> nicht erledigt .K
