@@ -1,0 +1,6 @@
+package com.example.roomance
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
