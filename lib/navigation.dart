@@ -36,10 +36,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
+              size: 30,
             ),
             icon: Icon(
               Icons.done_all,
-              size: 24,
+              size: 30,
             ),
             label: 'Matches',
           ),
@@ -51,9 +52,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
-              size: 24,
+              size: 30,
             ),
-            icon: Icon(Icons.group),
+            icon: Icon(
+              Icons.group,
+              size: 30,
+            ),
             label: 'Entdecken',
           ),
           NavigationDestination(
@@ -64,11 +68,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
-              size: 24,
+              size: 30,
             ),
             icon: ImageIcon(
               AssetImage("assets/logo1.png"),
-              size: 24,
+              size: 30,
             ),
             label: '',
           ),
@@ -76,18 +80,21 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedIcon: Badge(
               label: Text('2'), // TODO Variable
               child: GradientIcon(
-                icon: Icons.chat_bubble,
+                icon: Icons.chat_bubble_outline_rounded,
                 gradient: LinearGradient(
                   colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
-                size: 24,
+                size: 30,
               ),
             ),
             icon: Badge(
               label: Text('2'), // TODO Variable
-              child: Icon(Icons.chat_bubble),
+              child: Icon(
+                Icons.chat_bubble_outline_rounded,
+                size: 30,
+              ),
             ),
             label: 'Chat',
           ),
@@ -99,9 +106,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
-              size: 24,
+              size: 30,
             ),
-            icon: Icon(Icons.perm_identity),
+            icon: Icon(
+              Icons.perm_identity,
+              size: 30,
+            ),
             label: 'Profil',
           ),
         ],
