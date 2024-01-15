@@ -11,12 +11,14 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width,  // Dynamische Anpassung an bildschirm
+        width: MediaQuery.of(context)
+            .size
+            .width, // Dynamische Anpassung an bildschirm
         height: MediaQuery.of(context).size.height,
         clipBehavior: Clip.antiAlias,
         decoration: const ShapeDecoration(
           gradient: LinearGradient(
-            begin: Alignment(0.00, -1.00),   // Farbverlauf
+            begin: Alignment(0.00, -1.00), // Farbverlauf
             end: Alignment(0, 1),
             colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
           ),
@@ -26,17 +28,20 @@ class SecondScreen extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: MediaQuery.of(context).size.width / 2 - 152, // Dyn. Ausrichtung Anmeldung
+              left: MediaQuery.of(context).size.width / 2 -
+                  152, // Dyn. Ausrichtung Anmeldung
               top: 690,
               child: SizedBox(
                 width: 304,
                 height: 53,
                 child: ElevatedButton(
                   onPressed: () {
-                                  // Button Funktion zur nächsten Seite
+                    // Button Funktion zur nächsten Seite
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const BottomNavBar()),  // LOG IN zur nächsten Seite -> Navigationsseite
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BottomNavBar()), // LOG IN zur nächsten Seite -> Navigationsseite
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -49,13 +54,13 @@ class SecondScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        "assets/images/google.png",   // Google LOGO
+                        "assets/images/google.png", // Google LOGO
                         width: 33,
                         height: 33,
                       ),
                       const SizedBox(width: 8), // Abstand Logo Text
                       const Text(
-                        'LOG IN WITH GOOGLE',   // ---- Kursive Schrift
+                        'LOG IN WITH GOOGLE', // ---- Kursive Schrift
                         style: TextStyle(
                           color: Color(0xFF483F3F),
                           fontSize: 13.70,
@@ -70,7 +75,8 @@ class SecondScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: MediaQuery.of(context).size.width / 2 - 56, // Ermöglicht die dynamische Positionierung in der Mitte
+              left: MediaQuery.of(context).size.width / 2 -
+                  56, // Ermöglicht die dynamische Positionierung in der Mitte
               top: 755,
               child: const SizedBox(
                 width: 112,
@@ -86,9 +92,9 @@ class SecondScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             Positioned(
-              left: MediaQuery.of(context).size.width / 2 - 161.5, // Dynamische Positionierung
+              left: MediaQuery.of(context).size.width / 2 -
+                  161.5, // Dynamische Positionierung
               top: 630,
               child: const SizedBox(
                 width: 323,
@@ -111,7 +117,8 @@ class SecondScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: MediaQuery.of(context).size.width / 2 - 112.5, // Dynamische Anpassung an Bildschirm
+              left: MediaQuery.of(context).size.width / 2 -
+                  112.5, // Dynamische Anpassung an Bildschirm
               top: 134,
               child: SizedBox(
                 width: 225,

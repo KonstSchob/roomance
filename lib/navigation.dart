@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:roomance/import.dart';
 
 // --- Neuer Code, um Navigation der Hauptseiten zu handeln ---
@@ -6,7 +5,6 @@ import 'package:roomance/import.dart';
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
-  
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
@@ -16,7 +14,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -25,29 +23,47 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         indicatorColor: Colors.amber,
         selectedIndex: currentPageIndex,
-        destinations: const <Widget>[ //TODO Label und Icons für Seiten richtig machen
+        destinations: const <Widget>[
+          //TODO Label und Icons für Seiten richtig machen
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Entdecken', 
-          ),
-          NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Chat',
-          ),
-          NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
+            selectedIcon: Icon(
+              Icons.done_all,
+            ),
+            icon: GradientIcon(
+              icon: Icons.done_all,
+              gradient: LinearGradient(
+                colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                begin: Alignment(0.00, -1.00), // Farbverlauf
+                end: Alignment(0, 1),
+              ),
+              size: 30,
             ),
             label: 'Matches',
           ),
           NavigationDestination(
+            icon: Badge(child: Icon(Icons.notifications_sharp)),
+            label: 'Entdecken',
+          ),
+          NavigationDestination(
+            icon: ImageIcon(
+              AssetImage("assets/logo1.png"),
+              size: 24,
+            ),
+            label: '',
+          ),
+          NavigationDestination(
             icon: Badge(
-              label: Text('2'),
+              label: Text('2'), // TODO Variable
               child: Icon(Icons.messenger_sharp),
             ),
-            label: 'Swipen',
+            label: 'Chat',
+          ),
+          NavigationDestination(
+            icon: Badge(
+              label: Text('2'), // TODO Variable
+              child: Icon(Icons.perm_identity),
+            ),
+            label: 'Profil',
           ),
         ],
       ),
@@ -57,7 +73,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const Chat(),
         const Matches(),
         const Swipen(),
-
       ][currentPageIndex],
     );
   }
