@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Notwendig für Portrait Modus
 import 'draggable_card';
 import 'dart:async';
-
+ fortnite
 
 // Noch alles in einem Code ca. ~1.800 Zeilen momentan
 // Navigationsleiste wird noch ausgegliedert, Code vereinfacht
