@@ -61,18 +61,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Entdecken',
           ),
           NavigationDestination(
-            selectedIcon: GradientIcon(
-              icon: Icons.discord,
-              gradient: LinearGradient(
-                colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-              size: 30,
+            selectedIcon: ImageIcon(
+              AssetImage("assets/logoicon.png"),
+              size: 40,
             ),
             icon: ImageIcon(
               AssetImage("assets/logo1.png"),
-              size: 30,
+              size: 40,
             ),
             label: '',
           ),
