@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import '../import.dart';
 
 // SEITE MATCHES ----------------------------------------------------IN ARBEIT .ML
@@ -49,7 +48,7 @@ class Matches extends StatelessWidget {
             ),
           ),
 
-                    // Match 1
+          // Match 1
           Positioned(
             left: MediaQuery.of(context).size.width / 2 - 195,
             top: 200,
@@ -134,7 +133,8 @@ class Matches extends StatelessWidget {
                                       decoration: ShapeDecoration(
                                         color: const Color(0xFFFCFCFC),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                     ),
@@ -146,14 +146,17 @@ class Matches extends StatelessWidget {
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => const Chat()),
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Chat()),
                                         );
                                       },
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.transparent,
                                         elevation: 0,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                       child: const Text(
@@ -165,7 +168,6 @@ class Matches extends StatelessWidget {
                                           fontFamily: 'Mulish',
                                           fontWeight: FontWeight.w700,
                                           height: 0.06,
-                                          
                                         ),
                                       ),
                                     ),
@@ -182,7 +184,7 @@ class Matches extends StatelessWidget {
               ),
             ),
           ),
-                    // Match 2
+          // Match 2
           Positioned(
             left: MediaQuery.of(context).size.width / 2 - 195,
             top: 470,
@@ -267,7 +269,8 @@ class Matches extends StatelessWidget {
                                       decoration: ShapeDecoration(
                                         color: const Color(0xFFFCFCFC),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                     ),
@@ -279,14 +282,17 @@ class Matches extends StatelessWidget {
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => const Chat()),
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Chat()),
                                         );
                                       },
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.transparent,
                                         elevation: 0,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                       child: const Text(
@@ -314,7 +320,7 @@ class Matches extends StatelessWidget {
               ),
             ),
           ),
-                     // Match 3
+          // Match 3
           Positioned(
             left: MediaQuery.of(context).size.width / 2 - 195,
             top: 740,
@@ -399,7 +405,8 @@ class Matches extends StatelessWidget {
                                       decoration: ShapeDecoration(
                                         color: const Color(0xFFFCFCFC),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                     ),
@@ -411,14 +418,17 @@ class Matches extends StatelessWidget {
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => const Chat()),
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Chat()),
                                         );
                                       },
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.transparent,
                                         elevation: 0,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                         ),
                                       ),
                                       child: const Text(
@@ -517,7 +527,10 @@ class Matches extends StatelessWidget {
   }
 
   Widget buildIconButton(
-      {required String label, required String imagePath, double scale = 1.0, Function()? onPressed}) {
+      {required String label,
+      required String imagePath,
+      double scale = 1.0,
+      Function()? onPressed}) {
     return IconButton(
       onPressed: onPressed,
       icon: Transform.scale(

@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
 import '../../import.dart';
-
-
 
 class Swipen extends StatelessWidget {
   const Swipen({super.key});
 //------------------------------------------Swipefunktion (IMPORTIERT) Zusammen mit Pubspec----------------------------//
   @override
   Widget build(BuildContext context) {
-    String rightSwipeImagePath = 'assets/images/roomlike.png';  // Seiten, welche angezeigt werden
+    String rightSwipeImagePath =
+        'assets/images/roomlike.png'; // Seiten, welche angezeigt werden
     String leftSwipeImagePath = 'assets/images/roomnope.png';
     String originalImagePath = 'assets/room.png';
 
@@ -47,7 +45,8 @@ class Swipen extends StatelessWidget {
               }
             },
           ),
-          const Positioned(  //------------------ Inhalt auf Swipekarte-------------------//
+          const Positioned(
+            //------------------ Inhalt auf Swipekarte-------------------//
             left: 20.0,
             bottom: 100.0,
             child: Column(
@@ -94,7 +93,8 @@ class Swipen extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(  // ICONS unten 
+          Positioned(
+            // ICONS unten
             bottom: 20.0,
             left: MediaQuery.of(context).size.width / 2 - 170,
             child: Container(
@@ -103,7 +103,6 @@ class Swipen extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/nopeicon.png'),
-                  
                   fit: BoxFit.fill,
                 ),
               ),
@@ -117,7 +116,7 @@ class Swipen extends StatelessWidget {
               height: 60,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/back.png'), 
+                  image: AssetImage('assets/back.png'),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -131,7 +130,7 @@ class Swipen extends StatelessWidget {
               height: 75,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/likeicon.png'), 
+                  image: AssetImage('assets/likeicon.png'),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -140,8 +139,6 @@ class Swipen extends StatelessWidget {
         ],
       ),
 
-
-      
       // //---------------------------------------- NAVIGATIONSLEISTE-----------------------------------------//
       // bottomNavigationBar: SizedBox(
       //   height: 60,
@@ -206,9 +203,12 @@ class Swipen extends StatelessWidget {
     );
   }
 
-
 //--------------------------------------------------Swipe Widget----------------------------------------------------------------------------------
-  Widget buildIconButton({required String imagePath, double scale = 1.0, Function()? onPressed, Function()? onSwipe}) {
+  Widget buildIconButton(
+      {required String imagePath,
+      double scale = 1.0,
+      Function()? onPressed,
+      Function()? onSwipe}) {
     return IconButton(
       onPressed: () {
         if (onSwipe != null) {
@@ -225,7 +225,8 @@ class Swipen extends StatelessWidget {
     );
   }
 
-  void loadNewImage(String imagePath, BuildContext context, String originalImagePath) {
+  void loadNewImage(
+      String imagePath, BuildContext context, String originalImagePath) {
     // Implement logic to load and display the new image in the corresponding area
     showDialog(
       context: context,
@@ -249,9 +250,9 @@ class Swipen extends StatelessWidget {
     );
 
     // Delay for 1 second and then close the dialog and revert to the original image
-    Future.delayed(const Duration(seconds: 1), () {   // Verzögerung von 1 Sekunde, dann nächster Screen
-      Navigator.of(context).pop();                    // Hier später aus Datenbank weitere Anzeigen
-      
+    Future.delayed(const Duration(seconds: 1), () {
+      // Verzögerung von 1 Sekunde, dann nächster Screen
+      Navigator.of(context).pop(); // Hier später aus Datenbank weitere Anzeigen
     });
   }
 }

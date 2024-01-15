@@ -8,3 +8,5 @@ export 'Seiten/swipen/swipen.dart';
 export 'Seiten/swipen/draggable_card';
 export 'package:gradient_icon/gradient_icon.dart';
 export 'package:flutter/material.dart';
+export 'Seiten/profilseite.dart';
+export 'navigation.dart';

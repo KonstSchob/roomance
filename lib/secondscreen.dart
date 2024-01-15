@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:roomance/navigation.dart';
 import 'import.dart';
 
 //--------------------------------- Start Seite 2 mit Anmeldung --------------------------------//

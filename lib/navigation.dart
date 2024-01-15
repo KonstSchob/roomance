@@ -21,30 +21,51 @@ class _BottomNavBarState extends State<BottomNavBar> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        indicatorColor:
+            Color.fromARGB(71, 220, 193, 174), //leichter grauer Akzent
+        shadowColor: Colors.black,
+        elevation: 1,
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           //TODO Label und Icons für Seiten richtig machen
           NavigationDestination(
-            selectedIcon: Icon(
-              Icons.done_all,
-            ),
-            icon: GradientIcon(
+            selectedIcon: GradientIcon(
               icon: Icons.done_all,
               gradient: LinearGradient(
                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
-                begin: Alignment(0.00, -1.00), // Farbverlauf
-                end: Alignment(0, 1),
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
-              size: 30,
+            ),
+            icon: Icon(
+              Icons.done_all,
+              size: 24,
             ),
             label: 'Matches',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
+            selectedIcon: GradientIcon(
+              icon: Icons.discord,
+              gradient: LinearGradient(
+                colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              size: 24,
+            ),
+            icon: Icon(Icons.group),
             label: 'Entdecken',
           ),
           NavigationDestination(
+            selectedIcon: GradientIcon(
+              icon: Icons.discord,
+              gradient: LinearGradient(
+                colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              size: 24,
+            ),
             icon: ImageIcon(
               AssetImage("assets/logo1.png"),
               size: 24,
@@ -52,27 +73,46 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: '',
           ),
           NavigationDestination(
+            selectedIcon: Badge(
+              label: Text('2'), // TODO Variable
+              child: GradientIcon(
+                icon: Icons.chat_bubble,
+                gradient: LinearGradient(
+                  colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+                size: 24,
+              ),
+            ),
             icon: Badge(
               label: Text('2'), // TODO Variable
-              child: Icon(Icons.messenger_sharp),
+              child: Icon(Icons.chat_bubble),
             ),
             label: 'Chat',
           ),
           NavigationDestination(
-            icon: Badge(
-              label: Text('2'), // TODO Variable
-              child: Icon(Icons.perm_identity),
+            selectedIcon: GradientIcon(
+              icon: Icons.perm_identity,
+              gradient: LinearGradient(
+                colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              size: 24,
             ),
+            icon: Icon(Icons.perm_identity),
             label: 'Profil',
           ),
         ],
       ),
       body: <Widget>[
-        // TODO Seiten verlinken
-        const EntdeckenScreen(),
-        const Chat(),
+        // TODO Seiten richtig verlinken
         const Matches(),
+        const EntdeckenScreen(),
         const Swipen(),
+        const Chat(),
+        const Profil(),
       ][currentPageIndex],
     );
   }
