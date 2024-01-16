@@ -125,7 +125,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
 // --- ALTE NavBar ---
 
-
 // bottomNavigationBar: SizedBox(
 //         height: 60,
 //         child: BottomAppBar(

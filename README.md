@@ -1,11 +1,19 @@
-# Tutorial:
-1. Fortnite spielen
+# Todo:
 
-3. Prokrastinieren
+- Logo updaten
+- Code weiter ausgliedern
+- Navigationsleiste finalisieren
+- Darstellung wird Dynamisch ausgerichtet, damit diese auf jedem Gerät funktioniert
+- Spezielle Funktionen: Swipe Funktion, Chat Funktion (Maps Implementierung in Sucheinstellungen geplant)
+- 4 Seiten fertig/ 2 in Arbeit/ 2 Seiten stehen noch aus
+- Probleme: Scrollbarer Screen, Button implementierung in Swipe Funktionen
+- Screens/dateien ordentlich benennen
+- Seiten: Einstellungen/ Matches / Profil
+- Mehr dynamische Positionierungen -> Erledigt .ML -> nicht erledigt .K
 
 # roomance
 
-A new Flutter project.
+Eine wundervolle App
 
 ## Getting Started
 
