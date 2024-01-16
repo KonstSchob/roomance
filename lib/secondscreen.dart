@@ -131,7 +131,8 @@ class SecondScreen extends StatelessWidget {
                       height: 46,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/images/logo1.png"),
+                          image: AssetImage(
+                              "assets/images/logo1.png"), // TODO einheitlich ordner machen
                           fit: BoxFit.fill,
                         ),
                       ),

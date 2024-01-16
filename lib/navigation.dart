@@ -30,7 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           //TODO Label und Icons für Seiten richtig machen
           NavigationDestination(
             selectedIcon: GradientIcon(
-              icon: Icons.done_all,
+              icon: Icons.done_all, // TODO haken?
               gradient: LinearGradient(
                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                 begin: Alignment.topCenter,
@@ -46,7 +46,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           NavigationDestination(
             selectedIcon: GradientIcon(
-              icon: Icons.discord,
+              icon: Icons.dashboard_rounded,
               gradient: LinearGradient(
                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                 begin: Alignment.topCenter,
@@ -55,7 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               size: 30,
             ),
             icon: Icon(
-              Icons.group,
+              Icons.dashboard_outlined,
               size: 30,
             ),
             label: 'Entdecken',
@@ -66,7 +66,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               size: 40,
             ),
             icon: ImageIcon(
-              AssetImage("assets/logo1.png"),
+              AssetImage("assets/images/logo1.png"),
               size: 40,
             ),
             label: '',
@@ -75,7 +75,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedIcon: Badge(
               label: Text('2'), // TODO Variable
               child: GradientIcon(
-                icon: Icons.chat_bubble_outline_rounded,
+                icon: Icons.chat_bubble_rounded,
                 gradient: LinearGradient(
                   colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                   begin: Alignment.topCenter,
@@ -95,7 +95,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           NavigationDestination(
             selectedIcon: GradientIcon(
-              icon: Icons.perm_identity,
+              icon: Icons.person,
               gradient: LinearGradient(
                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                 begin: Alignment.topCenter,
@@ -104,7 +104,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               size: 30,
             ),
             icon: Icon(
-              Icons.perm_identity,
+              Icons.person_outline,
               size: 30,
             ),
             label: 'Profil',
