@@ -24,13 +24,13 @@ void main() {
 }
 
 class Roomance extends StatelessWidget {
-  const Roomance({Key? key});
+  const Roomance({super.key});
 
   @override
   Widget build(BuildContext context) {
     // App-Konfiguration
     return const MaterialApp(
-      home: Startseite1(), //SOLLTE HOMESCREEN (Entdecken) SEIN
+      home: Startseite1(),
     );
   }
 }

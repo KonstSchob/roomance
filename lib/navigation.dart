@@ -22,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           });
         },
         indicatorColor:
-            Color.fromARGB(71, 220, 193, 174), //leichter grauer Akzent
+            const Color.fromARGB(71, 220, 193, 174), //leichter grauer Akzent mit Orangton
         shadowColor: Colors.black,
         elevation: 1,
         selectedIndex: currentPageIndex,
