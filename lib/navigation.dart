@@ -32,7 +32,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             //Matches
             selectedIcon: GradientIcon(
-              icon: Icons.done_all, // TODO haken?
+              icon: Icons.done_all,
               gradient: LinearGradient(
                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                 begin: Alignment.topCenter,
@@ -66,7 +66,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             // Swipen
             selectedIcon: Image(
-              image: AssetImage("assets/logoicon.png"), // TODO Position etwas nach unten ausrichten
+              image: AssetImage(
+                  "assets/logoicon.png"), // TODO Position etwas nach unten ausrichten
               width: 50,
               height: 50,
             ),
@@ -124,7 +125,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const EntdeckenScreen(),
         // const Swipen(),
         const Chat(),
-        ProfilePage(),
+        const ProfilePage(),
       ][currentPageIndex],
     );
   }
