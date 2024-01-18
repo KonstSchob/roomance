@@ -14,7 +14,11 @@ export 'package:gradient_icon/gradient_icon.dart';
 export 'Seiten/chat.dart';
 export 'Seiten/entdecken.dart';
 export 'Seiten/matches.dart';
-export 'Seiten/swipen/swipen.dart';
-export 'Seiten/swipen/draggable_card';
+export 'Seiten/swipen/swipen.dart'; // TODO Austauschen
+export 'Seiten/swipen/draggable_card'; // TODO Austauschen
+import 'package:swipe_cards/draggable_card.dart';
+import 'package:swipe_cards/swipe_cards.dart';
 export 'wg.dart';
+export 'wg_daten.dart';
 export 'Seiten/profilseite.dart';
+export 'package:gradient_borders/box_borders/gradient_box_border.dart';

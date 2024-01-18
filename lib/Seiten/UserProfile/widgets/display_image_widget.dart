@@ -1,6 +1,6 @@
-import 'dart:io';
+import '../../../import.dart';
 
-import 'package:flutter/material.dart';
+// Modifizierte DisplayImage Klasse, um gradient und lokale Bilder zu verwenden
 
 class DisplayImage extends StatelessWidget {
   final String imagePath;
@@ -15,53 +15,75 @@ class DisplayImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Color.fromRGBO(64, 105, 225, 1);
+    const roomanceGradient = LinearGradient(
+      colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+    );
 
     return Center(
         child: Stack(children: [
-      buildImage(color),
+      buildImage(roomanceGradient),
       Positioned(
-        child: buildEditIcon(color),
         right: 4,
         top: 10,
+        child: buildEditIcon(roomanceGradient),
       )
     ]));
   }
 
-  // Builds Profile Image
-  Widget buildImage(Color color) {
+  //Bild mit eigenem Rahmen in roomance Farben
+  Widget buildImage(LinearGradient rahmenColor) {
     final image = imagePath.contains('https://')
         ? NetworkImage(imagePath)
         : FileImage(File(imagePath));
 
-    return CircleAvatar(
-      radius: 75,
-      backgroundColor: color,
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: rahmenColor,
+        border: GradientBoxBorder(
+          gradient: rahmenColor,
+          width: 5,
+        ),
+      ),
       child: CircleAvatar(
         backgroundImage: image as ImageProvider,
-        radius: 70,
+        radius: 90,
       ),
     );
   }
 
-  // Builds Edit Icon on Profile Picture
-  Widget buildEditIcon(Color color) => buildCircle(
+  // Erzeugt den Kreis für den Edit-Button beim Profilbild
+  Widget buildEditIcon(LinearGradient rahmenColor) => buildCircle(
       all: 8,
+      gradient: rahmenColor,
       child: Icon(
         Icons.edit,
-        color: color,
+        color: Colors.black,
         size: 20,
       ));
 
-  // Builds/Makes Circle for Edit Icon on Profile Picture
   Widget buildCircle({
     required Widget child,
     required double all,
+    required LinearGradient gradient,
   }) =>
-      ClipOval(
-          child: Container(
-        padding: EdgeInsets.all(all),
-        color: Colors.white,
-        child: child,
-      ));
+      // Verwendet eigenen gradient
+      Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: gradient,
+          border: GradientBoxBorder(
+            gradient: gradient,
+            width: 3,
+          ),
+        ),
+        child: ClipOval(
+            child: Container(
+          padding: EdgeInsets.all(all),
+          color: Colors.white,
+          child: child,
+        )),
+      );
 }

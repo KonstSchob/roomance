@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:roomance/import.dart';
 import '../pages/edit_description.dart';
 import '../pages/edit_email.dart';
 import '../pages/edit_image.dart';
@@ -31,7 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
             elevation: 0,
             toolbarHeight: 10,
           ),
-          Center(
+          const Center(
               child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(
@@ -39,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(64, 105, 225, 1),
+                      color: Color.fromRGBO(0, 0, 0, 1),
                     ),
                   ))),
           InkWell(
@@ -71,19 +72,19 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 1,
               ),
               Container(
                   width: 350,
                   height: 40,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       border: Border(
                           bottom: BorderSide(
                     color: Colors.grey,
@@ -97,11 +98,15 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             child: Text(
                               getValue,
-                              style: TextStyle(fontSize: 16, height: 1.4),
+                              style: const TextStyle(fontSize: 16, height: 1.4),
                             ))),
-                    Icon(
-                      Icons.keyboard_arrow_right,
-                      color: Colors.grey,
+                    const GradientIcon(
+                      icon: Icons.keyboard_arrow_right,
+                      gradient: LinearGradient(
+                        colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
                       size: 40.0,
                     )
                   ]))
@@ -110,11 +115,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
   // Widget builds the About Me Section
   Widget buildAbout(User user) => Padding(
-      padding: EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Erzähle etwas über dich',
             style: TextStyle(
               fontSize: 15,
@@ -126,7 +131,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Container(
               width: 350,
               height: 200,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
                 color: Colors.grey,
@@ -144,14 +149,18 @@ class _ProfilePageState extends State<ProfilePage> {
                                 alignment: Alignment.topLeft,
                                 child: Text(
                                   user.aboutMeDescription,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
                                   ),
                                 ))))),
-                Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.grey,
+                const GradientIcon(
+                  icon: Icons.keyboard_arrow_right,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                   size: 40.0,
                 )
               ]))

@@ -43,9 +43,9 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 320,
-                    child: const Text(
+                    child: Text(
                       "Deine Telefonnummer",
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

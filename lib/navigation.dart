@@ -29,8 +29,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         elevation: 1,
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
-          //TODO Label und Icons für Seiten richtig machen
           NavigationDestination(
+            //Matches
             selectedIcon: GradientIcon(
               icon: Icons.done_all, // TODO haken?
               gradient: LinearGradient(
@@ -47,6 +47,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Matches',
           ),
           NavigationDestination(
+            // Entdecken
             selectedIcon: GradientIcon(
               icon: Icons.dashboard_rounded,
               gradient: LinearGradient(
@@ -57,23 +58,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
               size: 30,
             ),
             icon: Icon(
-              Icons.dashboard,
+              Icons.dashboard_rounded,
               size: 30,
             ),
             label: 'Entdecken',
           ),
           NavigationDestination(
-            selectedIcon: ImageIcon(
-              AssetImage("assets/logoicon.png"),
-              size: 40,
+            // Swipen
+            selectedIcon: Image(
+              image: AssetImage("assets/logoicon.png"), // TODO Position etwas nach unten ausrichten
+              width: 50,
+              height: 50,
             ),
             icon: ImageIcon(
-              AssetImage("assets/images/logo1.png"),
-              size: 40,
+              AssetImage("assets/logoicon.png"),
+              size: 50, // TODO Anmerkung: Geändert zu Test von 40 auf 50 .ML
             ),
             label: '',
           ),
           NavigationDestination(
+            // Chat
             selectedIcon: Badge(
               label: Text('2'), // TODO Variable
               child: GradientIcon(
@@ -96,6 +100,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Chat',
           ),
           NavigationDestination(
+            // Profil
             selectedIcon: GradientIcon(
               icon: Icons.person,
               gradient: LinearGradient(
@@ -117,7 +122,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         // TODO Seiten richtig verlinken
         const Matches(),
         const EntdeckenScreen(),
-        const Swipen(),
+        // const Swipen(),
         const Chat(),
         ProfilePage(),
       ][currentPageIndex],

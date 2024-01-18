@@ -41,6 +41,8 @@ dependencies:
   string_validator: ^0.3.0
   path_provider: ^2.0.4
   shared_preferences: ^2.0.8
+  swipe_cards: ^2.0.0+1
+  gradient_borders: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -70,32 +72,8 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-  
-  - assets/roomlike.png
-  - assets/back.png
-  - assets/likeicon.png
-  - assets/nopeicon.png
-  - assets/roomnope.png
-  - assets/images/nope.png
-  - assets/images/like.png
-  - assets/images/Chat.png
   - assets/images/
-  - assets/nopic.png
-  - assets/logo1.png
-  - assets/logo2.png
-  - assets/logo3.png
-  - assets/logoicon.png
-  - assets/send.png
-  - assets/room.png
-  - assets/roomnope.png
-  - assets/roomlike.png
-  - assets/images/send.png
-  - assets/images/room.png
-  - assets/images/roomnope.png
-  - assets/images/roomlike.png
-  - assets/images/Möhringer.png
-  - assets/images/Donaustraße.png
-  - assets/images/Steinstraße.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

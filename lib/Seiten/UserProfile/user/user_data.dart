@@ -9,7 +9,8 @@ class UserData {
 
   //Standardwerte
   static User myUser = User(
-      image: 'nopic.png',
+      image:
+          "https://upload.wikimedia.org/wikipedia/en/0/0b/Darth_Vader_in_The_Empire_Strikes_Back.jpg",
       name: '',
       email: '',
       phone: '',

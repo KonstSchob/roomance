@@ -1,11 +1,11 @@
-class wg {
+class WG {
   final String location;
   final int people;
   final int gender;
   final int distance;
   final String image;
 
-  const wg({
+  const WG({
     required this.location,
     required this.people,
     required this.gender,

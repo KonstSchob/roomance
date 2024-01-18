@@ -39,9 +39,9 @@ class EditNameFormPageState extends State<EditNameFormPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                   width: 330,
-                  child: const Text(
+                  child: Text(
                     "Wie ist dein Name?",
                     style: TextStyle(
                       fontSize: 25,
