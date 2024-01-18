@@ -1,4 +1,5 @@
 import 'package:roomance/import.dart';
+import 'Seiten/UserProfile/pages/profile_page.dart';
 
 // --- Neuer Code, um Navigation der Hauptseiten zu handeln ---
 
@@ -21,8 +22,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             currentPageIndex = index;
           });
         },
-        indicatorColor:
-            const Color.fromARGB(71, 220, 193, 174), //leichter grauer Akzent mit Orangton
+        backgroundColor: Colors.white,
+        indicatorColor: const Color.fromARGB(
+            71, 220, 193, 174), //leichter grauer Akzent mit Orangton
         shadowColor: Colors.black,
         elevation: 1,
         selectedIndex: currentPageIndex,
@@ -55,7 +57,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               size: 30,
             ),
             icon: Icon(
-              Icons.dashboard_outlined,
+              Icons.dashboard,
               size: 30,
             ),
             label: 'Entdecken',
@@ -117,7 +119,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const EntdeckenScreen(),
         const Swipen(),
         const Chat(),
-        const Profil(),
+        ProfilePage(),
       ][currentPageIndex],
     );
   }

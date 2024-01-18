@@ -35,7 +35,7 @@ class SecondScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     // Button Funktion zur nächsten Seite
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
