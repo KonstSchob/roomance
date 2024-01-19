@@ -4,7 +4,7 @@ Es kann je nach Gerät zu Layout-Problemen kommen. Getestet wurde die App auf ei
 # Installation
 Dieses Repository kann mit Git geklont werden und mit flutter run in VS Code lokal ausgeführt werden. Eine Anleitung dafür befindet sich [hier](https://docs.flutter.dev/get-started/install).
 
-Stattdessen kann die beigefügt .apk auch direkt installiert werden. Eventuell muss hierfür die Installation aus Unbekannten Quellen erlaubt werden. Der Play Protect Dialog kann ignoriert werden, er tritt auf, da diese App nicht aus dem Playstore kommt und verifiziert wurde.
+Stattdessen kann die beigefügt .apk auch direkt installiert werden. Eventuell muss hierfür die Installation aus Unbekannten Quellen erlaubt werden. Bei der Installation tritt ein Google Play Protect Dialog auf, da diese App nicht aus dem Playstore kommt und verifiziert wurde. Hier muss auf "Weitere Details" gedrückt werden und anschließend auf "Trotzdem installieren".
 
 # Erklärung zu den Custom Dependencies:
 Da manche der verwendeten Packages verändert werden mussten, 
