@@ -18,6 +18,9 @@ Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_
 
 ## Getting Started
 
+## Anleitung
+apk in releases
+sonst selbst öffnen in VS Code -> Link zur Anleitung
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:

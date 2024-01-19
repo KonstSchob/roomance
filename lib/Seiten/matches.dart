@@ -6,14 +6,9 @@ class Matches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-      children: [
-      //   AppBar(backgroundColor: Colors.white,
-      // ),
-      
-      // Logo 
-      Text('Fortnite'),      
+    return const Scaffold(
+      appBar: null, // TODO Implement
+      // --- Logo ---  
       // Stack(
       //   children: [
       //     Positioned(
@@ -54,8 +49,7 @@ class Matches extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      
-      const Matchliste(), 
+      body: Matchliste(), 
             
           // Positioned( // Match 2
           //   left: MediaQuery.of(context).size.width / 2 - 195,
@@ -329,24 +323,23 @@ class Matches extends StatelessWidget {
           //     ),
           //   ),
           // ),
-        ],
-      ),
-    );
+        // ],
+      );
   }
-
-  Widget buildIconButton(
-      {required String label,
-      required String imagePath,
-      double scale = 1.0,
-      Function()? onPressed}) {
-    return IconButton(
-      onPressed: onPressed,
-      icon: Transform.scale(
-        scale: scale,
-        child: Image.asset(imagePath),
-      ),
-    );
-  }
+// --- Button für Link zum Chat ---
+  // Widget buildIconButton(
+  //     {required String label,
+  //     required String imagePath,
+  //     double scale = 1.0,
+  //     Function()? onPressed}) {
+  //   return IconButton(
+  //     onPressed: onPressed,
+  //     icon: Transform.scale(
+  //       scale: scale,
+  //       child: Image.asset(imagePath),
+  //     ),
+  //   );
+  // }
 }
 
 class Matchliste extends StatefulWidget{
@@ -358,162 +351,169 @@ class Matchliste extends StatefulWidget{
 }
 
 class _MatchlisteState extends State<Matchliste> {
-  List<WG> wgliste = [];
-  List<WG> matchliste = [];
+  // List<WG> wgliste = WGDaten().wgliste;
+  List<WG> matchliste = WGDaten().wgliste;
 
+//   Widget build(BuildContext context) {
+//   return ListView.builder(
+//     // shrinkWrap: true,
+//     padding: const EdgeInsets.all(8),
+//     itemCount: matchliste.length,
+//     itemBuilder: (BuildContext context, int index) {
+//       return Container(
+//         height: 50,
+//         color: Colors.amber,
+//         child: Center(child: Text('Entry ${matchliste[index]}')),
+//       );
+//     },
+//   );
+// }
+// }
   @override
   Widget build (BuildContext context) {
-  return Scaffold(
-    body: matchliste.isEmpty ? const Center(
-      child: Text(
-        'There are no favorites yet!',
-        style: TextStyle(color: Colors.black),
-      ),
+  return 
+  Scaffold(
+    extendBody: true, // TODO Braucht man das?
+    body: 
+    matchliste.isEmpty ? 
+    const Text(
+      'There are no favorites yet!',
+      style: TextStyle(color: Colors.black),
     )
     : ListView.builder(
-        padding: null, //TODO implement padding/formatting
+        padding: const EdgeInsets.only(bottom: 15), //TODO implement padding/formatting
         itemCount: matchliste.length,
         itemBuilder: (context, index) {
           return Row(
-            children: [Text('TEST TEST TEST TEST\nTESTESTESTSETSFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'),
-              Positioned(
-                left: MediaQuery.of(context).size.width / 2 - 195,
-                top: 200,
-                child: SizedBox(
-                  width: 390,
-                  height: 250,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: 390,
-                          height: 250,
-                          decoration: ShapeDecoration(
-                            image: DecorationImage(
-                              image: matchliste[index].image, //Verwendetes Bild
-                              fit: BoxFit.fill,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                          ),
+            children: [
+              // SizedBox(
+              //   width: 390,
+              //   height: 250,
+                // child: 
+                Stack(
+                  children: [
+                    Container( //Bild der Wohnung
+                      width: 390,
+                      height: 250,
+                      alignment: Alignment.topCenter,
+                      decoration: ShapeDecoration(
+                        image: DecorationImage(
+                          image: matchliste[index].image, //Verwendetes Bild
+                          fit: BoxFit.fill,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
                         ),
                       ),
-                      Positioned(
-                        left: 5,
-                        top: 0,
-                        child: SizedBox(
-                          width: 357,
-                          height: 223,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 7,
-                                top: 177,
-                                child: SizedBox(
-                                  width: 178,
-                                  height: 36,
-                                  child: Text(
-                                    '${matchliste[index].people} Personen, ${matchliste[index].genderString}\n${matchliste[index].distance} km entfernt',
-                                    style: const TextStyle(
-                                      color: Color(0xFFAEAEAE),
-                                      fontSize: 15,
-                                      fontFamily: 'Mulish',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
+                    ),
+                    SizedBox(
+                      width: 357,
+                      height: 222,
+                      child: 
+                      Stack(
+                        children: [
+                          Positioned( // Name bzw. Straße der Wohnung
+                            left: 15,
+                            top: 30,
+                            child: SizedBox(
+                              height: 89,
+                              child: Text(
+                                matchliste[index].location,
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 30,
+                                  fontFamily: 'Mulish',
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ),
-                              Positioned(
-                                left: 6,
-                                top: 105,
-                                child: SizedBox(
-                                  width: 234,
-                                  height: 89,
-                                  child: Text(
-                                    matchliste[index].location,
-                                    style: const TextStyle(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 30,
-                                      fontFamily: 'Mulish',
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: MediaQuery.of(context).size.width - 130,
-                                top: 195,
-                                child: SizedBox(
-                                  width: 72,
-                                  height: 25,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0,
-                                        top: 0,
-                                        child: Container(
-                                          width: 72,
-                                          height: 25,
-                                          decoration: ShapeDecoration(
-                                            color: const Color(0xFFFCFCFC),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        left: 2,
-                                        top: -6,
-                                        child: ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const Chat()),
-                                            );
-                                          },
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.transparent,
-                                            elevation: 0,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                            ),
-                                          ),
-                                          child: const Text(
-                                            'Chat',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 15,
-                                              fontFamily: 'Mulish',
-                                              fontWeight: FontWeight.w700,
-                                              height: 0.06,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
+                          Positioned( //Beschreibung der Wohnung
+                            left: 15,
+                            top: 177,
+                            child: SizedBox(
+                              width: 178,
+                              height: 36,
+                              child: Text(
+                                '${matchliste[index].people} Personen, ${matchliste[index].genderString}\n${matchliste[index].distance} km entfernt',
+                                style: const TextStyle(
+                                  color: Color(0xFFAEAEAE),
+                                  fontSize: 15,
+                                  fontFamily: 'Mulish',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned( //Knopf Chat
+                            left: MediaQuery.of(context).size.width - 130,
+                            top: 195,
+                            child: SizedBox(
+                              width: 72,
+                              height: 25,
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    left: 0,
+                                    top: 0,
+                                    child: Container(
+                                      width: 72,
+                                      height: 25,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0xFFFCFCFC),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    left: 2,
+                                    top: -6,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Chat()),
+                                        );
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.transparent,
+                                        elevation: 0,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        'Chat',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 15,
+                                          fontFamily: 'Mulish',
+                                          fontWeight: FontWeight.w700,
+                                          height: 0.06,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ),
+              // ),
             ],
-          );
-        },
+         
+     );}));}}
 
 
 
@@ -550,6 +550,144 @@ class _MatchlisteState extends State<Matchliste> {
           //   ),
           // );
           
-      ),);
-  }
-}
+      // ),
+//       );
+//   }
+// }
+
+// --- Altes Match 1
+// Positioned(
+              //   left: MediaQuery.of(context).size.width / 2 - 195,
+              //   top: 200,
+              //   child: SizedBox(
+              //     width: 390,
+              //     height: 250,
+              //     child: Stack(
+              //       children: [
+              //         Positioned(
+              //           left: 0,
+              //           top: 0,
+              //           child: Container(
+              //             width: 390,
+              //             height: 250,
+              //             decoration: ShapeDecoration(
+              //               image: DecorationImage(
+              //                 image: matchliste[index].image, //Verwendetes Bild
+              //                 fit: BoxFit.fill,
+              //               ),
+              //               shape: RoundedRectangleBorder(
+              //                 borderRadius: BorderRadius.circular(15),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         Positioned(
+              //           left: 5,
+              //           top: 0,
+              //           child: SizedBox(
+              //             width: 357,
+              //             height: 223,
+              //             child: Stack(
+              //               children: [
+              //                 Positioned(
+              //                   left: 7,
+              //                   top: 177,
+              //                   child: SizedBox(
+              //                     width: 178,
+              //                     height: 36,
+              //                     child: Text(
+              //                       '${matchliste[index].people} Personen, ${matchliste[index].genderString}\n${matchliste[index].distance} km entfernt',
+              //                       style: const TextStyle(
+              //                         color: Color(0xFFAEAEAE),
+              //                         fontSize: 15,
+              //                         fontFamily: 'Mulish',
+              //                         fontWeight: FontWeight.w600,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Positioned(
+              //                   left: 6,
+              //                   top: 105,
+              //                   child: SizedBox(
+              //                     width: 234,
+              //                     height: 89,
+              //                     child: Text(
+              //                       matchliste[index].location,
+              //                       style: const TextStyle(
+              //                         color: Color.fromARGB(255, 255, 255, 255),
+              //                         fontSize: 30,
+              //                         fontFamily: 'Mulish',
+              //                         fontWeight: FontWeight.w800,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Positioned(
+              //                   left: MediaQuery.of(context).size.width - 130,
+              //                   top: 195,
+              //                   child: SizedBox(
+              //                     width: 72,
+              //                     height: 25,
+              //                     child: Stack(
+              //                       children: [
+              //                         Positioned(
+              //                           left: 0,
+              //                           top: 0,
+              //                           child: Container(
+              //                             width: 72,
+              //                             height: 25,
+              //                             decoration: ShapeDecoration(
+              //                               color: const Color(0xFFFCFCFC),
+              //                               shape: RoundedRectangleBorder(
+              //                                 borderRadius:
+              //                                     BorderRadius.circular(15),
+              //                               ),
+              //                             ),
+              //                           ),
+              //                         ),
+              //                         Positioned(
+              //                           left: 2,
+              //                           top: -6,
+              //                           child: ElevatedButton(
+              //                             onPressed: () {
+              //                               Navigator.push(
+              //                                 context,
+              //                                 MaterialPageRoute(
+              //                                     builder: (context) =>
+              //                                         const Chat()),
+              //                               );
+              //                             },
+              //                             style: ElevatedButton.styleFrom(
+              //                               backgroundColor: Colors.transparent,
+              //                               elevation: 0,
+              //                               shape: RoundedRectangleBorder(
+              //                                 borderRadius:
+              //                                     BorderRadius.circular(15),
+              //                               ),
+              //                             ),
+              //                             child: const Text(
+              //                               'Chat',
+              //                               textAlign: TextAlign.center,
+              //                               style: TextStyle(
+              //                                 color: Colors.black,
+              //                                 fontSize: 15,
+              //                                 fontFamily: 'Mulish',
+              //                                 fontWeight: FontWeight.w700,
+              //                                 height: 0.06,
+              //                               ),
+              //                             ),
+              //                           ),
+              //                         ),
+              //                       ],
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // )}

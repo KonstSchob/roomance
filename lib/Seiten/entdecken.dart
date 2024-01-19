@@ -14,7 +14,7 @@ class EntdeckenScreen extends StatelessWidget {
         children: [
           // Hauptinhalt der Seite
 
-          // Logo in Farbe oben links mit eigener Position --> Ebentuell dynamisch Erledigt .ML
+          // Logo in Farbe oben links mit eigener Position --> Eventuell dynamisch Erledigt .ML
           Positioned(
             top: 55,
             left: MediaQuery.of(context).size.width / 3 - 120,
@@ -57,28 +57,11 @@ class EntdeckenScreen extends StatelessWidget {
             ),
           ),
 
-          // ---------------------------------- Inhalt
-          Positioned(
-            left: MediaQuery.of(context).size.width /
-                2, // Ausrichtung Bild "STRAße"
-            top: 447,
-            child: Container(
-              width: 194,
-              height: 295,
-              decoration: ShapeDecoration(
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/bild3.png"),
-                  fit: BoxFit.fill,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(0),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
+          // --- Inhalt ---
+
+          Positioned( // Ausrichtung Bild Party
             left: MediaQuery.of(context).size.width / 3 -
-                128, // Ausrichtug Bild Party
+                128, 
             top: 447,
             child: Container(
               // Bild Lade ein
@@ -86,7 +69,7 @@ class EntdeckenScreen extends StatelessWidget {
               height: 295,
               decoration: ShapeDecoration(
                 image: const DecorationImage(
-                  image: AssetImage("assets/images/bild2.png"),
+                  image: AssetImage("assets/images/entdecken2.png"),
                   fit: BoxFit.fill,
                 ),
                 shape: RoundedRectangleBorder(
@@ -95,7 +78,6 @@ class EntdeckenScreen extends StatelessWidget {
               ),
             ),
           ),
-
           Positioned(
             left: MediaQuery.of(context).size.width / 3 -
                 118, // Dynamische Ausrichtung Schrift Bild "Party"
@@ -126,6 +108,26 @@ class EntdeckenScreen extends StatelessWidget {
               ),
             ),
           ),
+
+          Positioned( // Ausrichtung Bild "Unternehme etwas"
+            left: MediaQuery.of(context).size.width /
+                2, 
+            top: 447,
+            child: Container(
+              width: 194,
+              height: 295,
+              decoration: ShapeDecoration(
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/entdecken3.png"),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
+              ),
+            ),
+          ),
+          
 
           const Positioned(
             // Achtung hier werden Veranstalte, Unternehme etwas.. und Triff dich positioniert TODO Eventuell ändern
@@ -170,7 +172,7 @@ class EntdeckenScreen extends StatelessWidget {
                     left: 210,
                     top: 227,
                     child: Text(
-                      'Triff dich mit\nanderen Roomance Mates',
+                      'Triff dich mit\nanderen Roomance Nutzern',
                       style: TextStyle(
                         color: Color(0xFFAEAEAE),
                         fontSize: 15,
@@ -221,7 +223,7 @@ class EntdeckenScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            //-------------------------------- Bild Du suchst nach einem Zimmer
+            //Bild "Du suchst nach einem Zimmer"
             left: MediaQuery.of(context).size.width / 2 - 195,
             top: 127,
             child: SizedBox(
@@ -237,7 +239,7 @@ class EntdeckenScreen extends StatelessWidget {
                       height: 250,
                       decoration: ShapeDecoration(
                         image: const DecorationImage(
-                          image: AssetImage("assets/images/bild1.png"),
+                          image: AssetImage("assets/images/entdecken_room.png"),
                           fit: BoxFit.fill,
                         ),
                         shape: RoundedRectangleBorder(

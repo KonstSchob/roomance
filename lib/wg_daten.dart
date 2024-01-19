@@ -8,21 +8,28 @@ class WGDaten {
       people: 4,
       gender: 0,
       distance: 25,
-      image: const AssetImage('Möhringer.png'),
+      image: const AssetImage('assets/images/Möhringerstraße.png'),
       ),
     WG(
       location: 'Steinstraße',
       people: 2,
       gender: 2,
       distance: 2,
-      image: const AssetImage("Steinstraße.png"),
+      image: const AssetImage("assets/images/Steinstraße.png"),
       ),
     WG(
       location: 'Donaustraße',
       people: 6,
       gender: 1,
       distance: 5,
-      image: const AssetImage("Donaustraße.png"),
+      image: const AssetImage("assets/images/Donaustraße.png"),
       ),
+    WG(
+      location: 'Marktplatz',
+      people: 3,
+      gender: 99,
+      distance: 2,
+      image: const AssetImage("assets/images/Marktplatz.png"),
+    ),
   ];
 }

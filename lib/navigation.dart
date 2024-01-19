@@ -1,3 +1,4 @@
+import 'package:roomance/Seiten/swipen/swipecard.dart';
 import 'package:roomance/import.dart';
 import 'Seiten/UserProfile/pages/profile_page.dart';
 
@@ -123,7 +124,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         // TODO Seiten richtig verlinken
         const Matches(),
         const EntdeckenScreen(),
-        // const Swipen(),
+        const Swipecard(),
         const Chat(),
         const ProfilePage(), 
       ][currentPageIndex],

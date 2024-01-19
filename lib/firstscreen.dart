@@ -42,43 +42,44 @@ class Startseite1 extends StatelessWidget {
             ),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           ),
-          child: Stack(
-            children: [
-              // Positioniertes Logo
-              Positioned(
-                left: MediaQuery.of(context).size.width / 2 -
-                    41.75, // Dynamische Positionierung Mittig Teilen durch halbe Breite Container
-
-                top: 344,
-                child: Container(
-                  width: 83.50, // Wichtiger Wert für MediaQuery
-                  height: 98,  
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          "assets/images/logo1.png"), // LOGo in der Mitte
-                      //fit: BoxFit.fill,   // TODO zum Test auskommentiert wegen gelbem Unterstrich
+          child: Center(
+            child: Stack(
+              children: [
+                // Positioniertes Logo
+                Positioned(
+                  left: MediaQuery.of(context).size.width / 2, // Dynamische Positionierung Mittig Teilen durch halbe Breite Container
+            
+                  top: 344,
+                  child: Container(
+                    width: 83.50, // Wichtiger Wert für MediaQuery
+                    height: 98,  
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            "assets/images/logo1.png"), // LOGo in der Mitte
+                        //fit: BoxFit.fill,   // TODO zum Test auskommentiert wegen gelbem Unterstrich
+                      ),
                     ),
                   ),
                 ),
-              ),
-              // Positionierter Schriftzug
-              const Positioned(
-                left: 115,
-                top: 434,
-                child: Text(
-                  'roomance', // Schriftzug Mitte unter Logo
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 48,
-                    fontFamily: 'Gudea',
-                    fontWeight: FontWeight.w400,
-                    letterSpacing:
-                        -4, //---------- Evtl an andere Logos anpassen-----> ERLEDIGT .ML
+                // Positionierter Schriftzug
+                Positioned(
+                  left: MediaQuery.of(context).size.width / 2,
+                  top: 434,
+                  child: const Text(
+                    'roomance', // Schriftzug Mitte unter Logo
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 48,
+                      fontFamily: 'Gudea',
+                      fontWeight: FontWeight.w400,
+                      letterSpacing:
+                          -4, //---------- Evtl an andere Logos anpassen-----> ERLEDIGT .ML
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

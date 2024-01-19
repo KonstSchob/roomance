@@ -16,8 +16,8 @@ export 'Seiten/entdecken.dart';
 export 'Seiten/matches.dart';
 export 'Seiten/swipen/swipen.dart'; // TODO Austauschen
 export 'Seiten/swipen/draggable_card'; // TODO Austauschen
-import 'package:swipe_cards/draggable_card.dart'; // TODO Austauschen
-import 'package:swipe_cards/swipe_cards.dart'; // TODO Austauschen
+export 'package:swipe_cards/draggable_card.dart'; // TODO behalten
+export 'package:swipe_cards/swipe_cards.dart'; // TODO behalten
 export 'wg.dart';
 export 'wg_daten.dart';
 export 'Seiten/OUTDATED profilseite.dart';
