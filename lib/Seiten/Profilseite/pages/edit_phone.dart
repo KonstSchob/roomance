@@ -50,7 +50,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                         height: 100,
                         width: 320,
                         child: TextFormField(
-                          // Handles Form Validation
+                          // Formvalidierung der Handynummer
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Bitte gebe deine Telefonnummer ein';
@@ -75,7 +75,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                           height: 50,
                           child: GradientElevatedButton(
                             onPressed: () {
-                              // Validate returns true if the form is valid, or false otherwise.
+                              // Formvalidierung der Handynummer
                               if (_formKey.currentState!.validate() &&
                                   isNumeric(phoneController.text)) {
                                 updateUserValue(phoneController.text);

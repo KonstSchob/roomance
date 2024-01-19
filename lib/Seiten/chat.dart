@@ -53,7 +53,7 @@ class Chat extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          // ----------------------------Texteingabefeld mit TextField
+          // Texteingabefeld mit TextField
           Positioned(
             bottom: 80,
             left: 16,

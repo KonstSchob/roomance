@@ -8,6 +8,7 @@ class WG {
   String genderString;
   final int distance;
   final ImageProvider image;
+  bool isMatch;
 
   WG({
     required this.location,
@@ -15,6 +16,7 @@ class WG {
     required this.gender,
     required this.distance, //Platzhalter, müsste über Standort laufen
     required this.image,
+    this.isMatch = false,
    
   }) : genderString = (gender == 0) ? 'gemischt' : 
                    (gender == 1) ? 'nur männlich' :

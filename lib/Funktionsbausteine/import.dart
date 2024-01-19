@@ -11,20 +11,18 @@ export '../navigation.dart';
 export 'package:gradient_icon/gradient_icon.dart';
 
 // Imports für die Seiten Matches, Entdecken und Chat
-export '../Seiten/chat.dart';
-export '../Seiten/entdecken.dart';
 export '../Seiten/matches.dart';
+export '../Seiten/entdecken.dart';
+export '../Seiten/chat.dart';
 
 // Imports für die Swipen Seite
-export 'package:swipe_cards/draggable_card.dart'; // TODO behalten
-export 'package:swipe_cards/swipe_cards.dart'; // TODO behalten
+export 'package:swipe_cards/draggable_card.dart';
+export 'package:swipe_cards/swipe_cards.dart';
 export '../Seiten/Swipeseite/swipen_buttons.dart';
 export '../Seiten/Swipeseite/swipen_wgkarte.dart';
 export 'wg_daten.dart';
 
 // Imports für die Profilseiten
-
-export '../Seiten/OUTDATED profilseite.dart';
 export 'package:gradient_borders/box_borders/gradient_box_border.dart';
 export '../Seiten/Profilseite/pages/edit_description.dart';
 export '../Seiten/Profilseite/pages/edit_email.dart';

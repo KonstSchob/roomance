@@ -1,17 +1,5 @@
 import '../../Funktionsbausteine/import.dart';
 
-//Usage:
-/*
-SwipeCards(
-            matchEngine: <MatchEngine>,f
-            itemBuilder: (BuildContext context, int index) {},
-            onStackFinished: () {},
-            itemChanged: (SwipeItem item, int index) {},
-            upSwipeAllowed: <bool>,
-            fillSpace: <bool>,
-);
-*/
-
 class Swipen extends StatefulWidget {
   const Swipen({Key? key, this.title}) : super(key: key);
 
@@ -38,11 +26,9 @@ class _SwipenState extends State<Swipen> {
         right: isLike ? 50 : null, // Set right for Like
         child: Material(
           color: Colors.transparent,
-          child: Container(
-            child: Transform.rotate(
-              angle: isNope ? 0.87 : (isLike ? -0.87 : 0.0),
-              child: Image.asset(imagePath, width: 100, height: 50),
-            ),
+          child: Transform.rotate(
+            angle: isNope ? 0.87 : (isLike ? -0.87 : 0.0),
+            child: Image.asset(imagePath, width: 100, height: 50),
           ),
         ),
       ),
@@ -62,9 +48,10 @@ class _SwipenState extends State<Swipen> {
       swipeItems.add(SwipeItem(
           content: wgliste[i], //aktuell angezeigte WG
 
-          //TODO WGs zu matches hinzufügen
           likeAction: () {
             _showIconOverlay('assets/images/swipe_like.png', isLike: true);
+            wgliste[i].isMatch =
+                true; // Dafür gedacht, Matches hinzuzufügen, aber nicht implementiert
           },
           nopeAction: () {
             _showIconOverlay('assets/images/swipe_nope.png', isNope: true);
@@ -90,7 +77,9 @@ class _SwipenState extends State<Swipen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 8.0,),
+                padding: const EdgeInsets.only(
+                  left: 8.0,
+                ),
                 child: Image.asset(
                   'assets/images/logo2.png',
                   fit: BoxFit.contain,
@@ -126,14 +115,34 @@ class _SwipenState extends State<Swipen> {
           ),
         ),
         body: Stack(children: [
+          // Untere Buttons ausrichten
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Swipebuttons(
+                  _matchEngine), // Übergabe an Klasse für die Buttons
+            ),
+          ),
           SwipeCards(
             matchEngine: _matchEngine!,
             itemBuilder: (BuildContext context, int index) {
               return WGKarte(wgliste[
                   index]); //Übergabe an Klasse für Erstellung der Karten
             },
+            itemChanged: (SwipeItem item, int index) {
+              print("item: ${item.content.location}, index: $index");
+            },
+            leftSwipeAllowed: true,
+            rightSwipeAllowed: true,
+            upSwipeAllowed: false, //Kein Superlike in roomance
+            fillSpace: true,
+            likeTag: Image.asset('assets/images/swipe_like.png',
+                width: 100, height: 50),
+            nopeTag: Image.asset('assets/images/swipe_nope.png',
+                width: 100, height: 50),
             onStackFinished: () {
-              //TODO Nachricht komm später wieder
+              //TODO Nicht implementiert: Nachricht, wenn keine Matches mehr gefunden werden
               // late OverlayEntry overlayEntry;
               // overlayEntry = OverlayEntry(
               //   builder: (BuildContext context) => Positioned.fill(
@@ -176,28 +185,7 @@ class _SwipenState extends State<Swipen> {
               // );
               // Overlay.of(context)!.insert(overlayEntry);
             },
-
-            itemChanged: (SwipeItem item, int index) {
-              print("item: ${item.content.location}, index: $index");
-            },
-            leftSwipeAllowed: true,
-            rightSwipeAllowed: true,
-            upSwipeAllowed: false, //Kein Superlike in roomance
-            fillSpace: true,
-            likeTag: Image.asset('assets/images/swipe_like.png',
-                width: 100, height: 50),
-            nopeTag: Image.asset('assets/images/swipe_nope.png',
-                width: 100, height: 50),
           ),
-          // Untere Buttons ausrichten
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Swipebuttons(
-                  _matchEngine), // Übergabe an Klasse für die Buttons
-            ),
-          )
         ]));
   }
 }

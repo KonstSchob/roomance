@@ -57,7 +57,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                           height: 100,
                           width: 150,
                           child: TextFormField(
-                            // Handles Form Validation for First Name
+                            // Formvalidierung des Vornamen
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Bitte schreibe deinen \nVornamen';
@@ -75,7 +75,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                           height: 100,
                           width: 150,
                           child: TextFormField(
-                            // Handles Form Validation for Last Name
+                            // Formvalidierung des Nachnamen
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Bitte schreibe deinen \nNachnamen';

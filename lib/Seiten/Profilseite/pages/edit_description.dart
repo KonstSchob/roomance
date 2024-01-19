@@ -3,11 +3,9 @@ import 'package:roomance/Funktionsbausteine/import.dart';
 
 // --- Seite, um Beschreibung zu bearbeiten ---
 
-
 class EditDescriptionFormPage extends StatefulWidget {
   const EditDescriptionFormPage({super.key});
 
-  
   @override
   State<EditDescriptionFormPage> createState() =>
       _EditDescriptionFormPageState();

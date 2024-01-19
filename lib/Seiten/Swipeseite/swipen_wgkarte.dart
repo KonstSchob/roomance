@@ -6,30 +6,22 @@ class WGKarte extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return //TODO Layout fixen
-        Container(
+    return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.0),
       ),
       // Inhalt auf Swipekarte
       child: Center(
         child: Stack(children: <Widget>[
-          // Image.asset(
-          //   {aktuelleWG.image},
-          //   width: double.infinity,
-          //   height: double.infinity,
-          //   fit: BoxFit.cover,
-          // ),
           Image(
               image: aktuelleWG.image,
               height: double.infinity,
               fit: BoxFit.cover),
-
           Container(
             // Enthält Text auf dunklem Hintergrund
             alignment: Alignment.bottomLeft,
             decoration: const BoxDecoration(
-              gradient:  LinearGradient(
+              gradient: LinearGradient(
                 colors: [
                   Colors.black,
                   Colors.transparent,

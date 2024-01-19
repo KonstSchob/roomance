@@ -2,7 +2,8 @@ import 'package:roomance/Funktionsbausteine/import.dart';
 import 'package:email_validator/email_validator.dart';
 
 
-// This class handles the Page to edit the Email Section of the User Profile.
+// // --- Seite, um Email zu bearbeiten ---
+
 class EditEmailFormPage extends StatefulWidget {
   const EditEmailFormPage({Key? key}) : super(key: key);
 
@@ -71,7 +72,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                           height: 50,
                           child: GradientElevatedButton(
                               onPressed: () {
-                              // Validate returns true if the form is valid, or false otherwise.
+                              // Validiert die Email
                               if (_formKey.currentState!.validate() &&
                                   EmailValidator.validate(
                                       emailController.text)) {

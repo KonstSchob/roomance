@@ -2,6 +2,8 @@ import 'package:roomance/Funktionsbausteine/import.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 
+// --- Seite, um Profilbild zu bearbeiten ---
+
 class EditImagePage extends StatefulWidget {
   const EditImagePage({Key? key}) : super(key: key);
 

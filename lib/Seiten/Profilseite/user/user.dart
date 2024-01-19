@@ -5,7 +5,6 @@ class User {
   String phone;
   String aboutMeDescription;
 
-  // Constructor
   User({
     required this.image,
     required this.name,

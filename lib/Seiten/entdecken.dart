@@ -354,7 +354,6 @@ class Entdecken extends StatelessWidget {
               ),
             ),
           ),
-          // ... Weitere Widgets oder Positioned-Elemente hier
         ],
       ),
     );
@@ -366,7 +365,7 @@ class Entdecken extends StatelessWidget {
       double scale = 1.0,
       Function()? onPressed}) {
     return IconButton(
-      onPressed: onPressed, // Nötig für Verlinkung
+      onPressed: onPressed, // Nötig für Verlinkung des Buttons
       icon: Transform.scale(
         scale: scale,
         child: Image.asset(imagePath),

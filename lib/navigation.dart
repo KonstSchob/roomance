@@ -2,7 +2,7 @@ import 'package:roomance/Seiten/Swipeseite/swipen.dart';
 import 'package:roomance/Funktionsbausteine/import.dart';
 import 'Seiten/Profilseite/pages/profile_page.dart';
 
-// --- Neuer Code, um Navigation der Hauptseiten zu handeln ---
+// --- Code, um Navigation der Hauptseiten zu handeln ---
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -68,13 +68,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
             // Swipen
             selectedIcon: Image(
               image: AssetImage(
-                  'assets/images/logoicon.png'), // TODO Position etwas nach unten ausrichten
+                  'assets/images/logoicon.png'),
               width: 50,
               height: 50,
             ),
             icon: ImageIcon(
               AssetImage('assets/images/logoicon.png'),
-              size: 50, // TODO Anmerkung: Geändert zu Test von 40 auf 50 .ML
+              size: 50,
             ),
             label: '',
           ),
@@ -130,71 +130,3 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 }
-
-// --- ALTE NavBar ---
-
-// bottomNavigationBar: SizedBox(
-//         height: 60,
-//         child: BottomAppBar(
-//           color: Colors.white,
-//           elevation: 8,
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children: [
-//               buildIconButton(
-//                 label: 'Matches',
-//                 imagePath: 'assets/images/Matches.png',
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (context) => const Matches()),
-//                   );
-//                 },
-//               ),
-//               buildIconButton(
-//                 label: 'Entdecken',
-//                 imagePath: 'assets/images/Entdecken.png',
-//                 scale: 1,
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
-//                   );
-//                 },
-//               ),
-//               buildIconButton(
-//                 label: 'Logo3',
-//                 imagePath: 'assets/images/logo3.png',
-//                 scale: 1.5,
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (context) => const Swipen()),
-//                   );
-//                 },
-//               ),
-//               buildIconButton(
-//                 label: 'Chat',
-//                 imagePath: 'assets/images/Chat.png',
-//                 scale: 1.2,
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (context) => const Chat()),
-//                   );
-//                 },
-//               ),
-//               buildIconButton(
-//                 label: 'Profil',
-//                 imagePath: 'assets/images/Profil.png',
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (context) => const EntdeckenScreen()),
-//                   );
-//                 },
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),

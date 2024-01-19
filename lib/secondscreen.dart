@@ -1,6 +1,6 @@
 import 'Funktionsbausteine/import.dart';
 
-//--------------------------------- Start Seite 2 mit Anmeldung --------------------------------//
+// --- Startseite 2 mit Anmeldung ---
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
