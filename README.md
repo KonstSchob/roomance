@@ -1,34 +1,21 @@
-# Todo:
+# Achtung: Dies ist keine voll-funktionsfähige App
+Es kann je nach Gerät zu Layout-Problemen kommen. Getestet wurde die App auf einem Samsung S20 und A90.
 
-- Logo updaten
-- Code weiter ausgliedern
-- Navigationsleiste finalisieren
-- Darstellung wird Dynamisch ausgerichtet, damit diese auf jedem Gerät funktioniert
-- Spezielle Funktionen: Swipe Funktion, Chat Funktion (Maps Implementierung in Sucheinstellungen geplant)
-- 4 Seiten fertig/ 2 in Arbeit/ 2 Seiten stehen noch aus
-- Probleme: Scrollbarer Screen, Button implementierung in Swipe Funktionen
-- Screens/dateien ordentlich benennen
-- Seiten: Matches
-- Mehr dynamische Positionierungen -> Erledigt .ML -> nicht erledigt .K
-- Swipen: Aktueller Stand des Swipens speichern, wenn Seite gewechselt wird
+# Installation
+Dieses Repository kann mit Git geklont werden und mit flutter run in VS Code lokal ausgeführt werden. Eine Anleitung dafür befindet sich [hier](https://docs.flutter.dev/get-started/install).
 
-# Custom Dependencies:
+Stattdessen kann die beigefügt .apk auch direkt installiert werden. Eventuell muss hierfür die Installation aus Unbekannten Quellen erlaubt werden. Der Play Protect Dialog kann ignoriert werden, er tritt auf, da diese App nicht aus dem Playstore kommt und verifiziert wurde.
+
+# Erklärung zu den Custom Dependencies:
 Da manche der verwendeten Packages verändert werden mussten, 
 sind die lokalen Versionen im Ordner lib/customdependencies gespeichert. 
-Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/Profil zu finden.
+Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/Profilseite zu finden.
 
-## Getting Started
-
-## Anleitung
-apk in releases
-sonst selbst öffnen in VS Code -> Link zur Anleitung
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Todo (Weitere Verbesserungen oder Ideen):
+- Logo und dessen Implementierungen verbessern
+- Darstellung dynamischer ausrichten, mehr Responsive Design
+- Swipen: Aktueller Stand des Swipens speichern, wenn Seite gewechselt wird
+- Spezielle Funktionen: 
+    - Matches implementieren
+    - Chat Funktion vervollständigen
+    - Maps Implementierung in Sucheinstellungen geplant
