@@ -67,12 +67,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
             // Swipen
             selectedIcon: Image(
               image: AssetImage(
-                  "assets/logoicon.png"), // TODO Position etwas nach unten ausrichten
+                  'assets/images/logoicon.png'), // TODO Position etwas nach unten ausrichten
               width: 50,
               height: 50,
             ),
             icon: ImageIcon(
-              AssetImage("assets/logoicon.png"),
+              AssetImage('assets/images/logoicon.png'),
               size: 50, // TODO Anmerkung: Geändert zu Test von 40 auf 50 .ML
             ),
             label: '',
@@ -80,7 +80,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             // Chat
             selectedIcon: Badge(
-              label: Text('2'), // TODO Variable
+              label: Text('-1'), // Nicht weiter implementiert
               child: GradientIcon(
                 icon: Icons.chat_bubble_rounded,
                 gradient: LinearGradient(
@@ -92,7 +92,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             icon: Badge(
-              label: Text('2'), // TODO Variable
+              label: Text('-1'), 
               child: Icon(
                 Icons.chat_bubble_outline_rounded,
                 size: 30,
@@ -125,7 +125,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const EntdeckenScreen(),
         // const Swipen(),
         const Chat(),
-        const ProfilePage(),
+        const ProfilePage(), 
       ][currentPageIndex],
     );
   }

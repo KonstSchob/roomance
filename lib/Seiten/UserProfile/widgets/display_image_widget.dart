@@ -1,4 +1,4 @@
-import '../../../import.dart';
+import 'package:roomance/import.dart';
 
 // Modifizierte DisplayImage Klasse, um gradient und lokale Bilder zu verwenden
 
@@ -41,7 +41,6 @@ class DisplayImage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        gradient: rahmenColor,
         border: GradientBoxBorder(
           gradient: rahmenColor,
           width: 5,
@@ -58,7 +57,7 @@ class DisplayImage extends StatelessWidget {
   Widget buildEditIcon(LinearGradient rahmenColor) => buildCircle(
       all: 8,
       gradient: rahmenColor,
-      child: Icon(
+      child: const Icon(
         Icons.edit,
         color: Colors.black,
         size: 20,

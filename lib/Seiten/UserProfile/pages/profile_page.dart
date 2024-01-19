@@ -1,22 +1,13 @@
 import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:roomance/import.dart';
-import '../pages/edit_description.dart';
-import '../pages/edit_email.dart';
-import '../pages/edit_image.dart';
-import '../pages/edit_name.dart';
-import '../pages/edit_phone.dart';
-import '../user/user.dart';
-import '../widgets/display_image_widget.dart';
-import '../user/user_data.dart';
 
-// This class handles the Page to dispaly the user's info on the "Edit Profile" Screen
+// --- Erstellen und Verwalten der Profilseite ---
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
@@ -40,68 +31,132 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(0, 0, 0, 1),
+                      color: Color.fromRGBO(0, 0, 0, 0),
                     ),
                   ))),
           InkWell(
               onTap: () {
-                navigateSecondPage(EditImagePage());
+                navigateSecondPage(const EditImagePage());
               },
               child: DisplayImage(
                 imagePath: user.image,
                 onPressed: () {},
               )),
-          buildUserInfoDisplay(user.name, 'Name', EditNameFormPage()),
-          buildUserInfoDisplay(user.phone, 'Nummer', EditPhoneFormPage()),
-          buildUserInfoDisplay(user.email, 'Email', EditEmailFormPage()),
+          buildUserInfoDisplay(
+              user.name, 'Vor- und Nachname', const EditNameFormPage()),
+          buildUserInfoDisplay(
+              user.phone, 'Telefonnummer', const EditPhoneFormPage()),
+          buildUserInfoDisplay(
+              user.email, 'Email-Adresse', const EditEmailFormPage()),
           Expanded(
-            child: buildAbout(user),
             flex: 4,
+            child: buildAbout(user),
           )
         ],
       ),
     );
   }
 
-  // Widget builds the display item with the proper formatting to display the user's info
+  // Zeigt die Nutzerinfo (Name, Nummer und Email) an
   Widget buildUserInfoDisplay(String getValue, String title, Widget editPage) =>
       Padding(
-          padding: EdgeInsets.only(bottom: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey,
+          padding: const EdgeInsets.only(top: 20),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              //Zeigt die Überschrift der jeweiligen Userinfo-Felder an
+              title,
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+                //Enthält clickbares Textfeld mit jeweiliger Nutzerinfo und Pfeil
+                width: 350,
+                height: 40,
+                decoration: BoxDecoration(
+                  //Graue Hinterlegung
+                  color: const Color.fromARGB(120, 221, 221, 221),
+                  borderRadius: BorderRadius.circular(15),
                 ),
+                child: TextButton(
+                    //Clickbares Textfeld
+                    onPressed: () {
+                      navigateSecondPage(editPage);
+                    },
+                    style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                    child: Row(children: [
+                      Expanded(
+                          child: Text(
+                        getValue.isEmpty
+                            ? 'Bitte gib deine Daten an'
+                            : getValue, //Überprüft, ob Textfeld leer ist
+                        style: const TextStyle(
+                            color: Colors.black, fontSize: 16, height: 1.4),
+                      )),
+                      const GradientIcon(
+                        //Pfeil in roomance Farbverlauf
+                        icon: Icons.keyboard_arrow_right,
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                        size: 40.0,
+                      )
+                    ]))),
+          ]));
+
+  // Zeigt den "Erzähl was über dich" Bereich an
+  Widget buildAbout(User user) => Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Meine Beschreibung',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
               ),
-              const SizedBox(
-                height: 1,
+            ),
+            Container(
+              width: 350,
+              height: 200,
+              decoration: BoxDecoration(
+                //Graue Hinterlegung
+                color: const Color.fromARGB(120, 221, 221, 221),
+                borderRadius: BorderRadius.circular(15),
               ),
-              Container(
-                  width: 350,
-                  height: 40,
-                  decoration: const BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(
-                    color: Colors.grey,
-                    width: 1,
-                  ))),
-                  child: Row(children: [
+              child: TextButton(
+                onPressed: () {
+                  navigateSecondPage(const EditDescriptionFormPage());
+                },
+                style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                child: Row(
+                  children: [
                     Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              navigateSecondPage(editPage);
-                            },
-                            child: Text(
-                              getValue,
-                              style: const TextStyle(fontSize: 16, height: 1.4),
-                            ))),
+                        child:
+                            Align(
+                                alignment: Alignment.topLeft,
+                            child:
+                            Text(
+                      user.aboutMeDescription.isEmpty
+                          ? 'Erzähle etwas über dich'
+                          : user
+                              .aboutMeDescription, //Überprüft, ob Textfeld leer ist
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        height: 1.4,
+                      ),
+                    ))),
                     const GradientIcon(
-                      icon: Icons.keyboard_arrow_right,
+                      icon: Icons
+                          .keyboard_arrow_right, //Pfeil in roomance Farbverlauf
                       gradient: LinearGradient(
                         colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
                         begin: Alignment.topCenter,
@@ -109,65 +164,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       size: 40.0,
                     )
-                  ]))
-            ],
-          ));
-
-  // Widget builds the About Me Section
-  Widget buildAbout(User user) => Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Erzähle etwas über dich',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
+                  ],
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 1),
-          Container(
-              width: 350,
-              height: 200,
-              decoration: const BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Colors.grey,
-                width: 1,
-              ))),
-              child: Row(children: [
-                Expanded(
-                    child: TextButton(
-                        onPressed: () {
-                          navigateSecondPage(EditDescriptionFormPage());
-                        },
-                        child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                            child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Text(
-                                  user.aboutMeDescription,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    height: 1.4,
-                                  ),
-                                ))))),
-                const GradientIcon(
-                  icon: Icons.keyboard_arrow_right,
-                  gradient: LinearGradient(
-                    colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                  size: 40.0,
-                )
-              ]))
-        ],
-      ));
+          ],
+        ),
+      );
 
-  // Refrshes the Page after updating user info.
+  // Refreshes the Page after updating user info.
   FutureOr onGoBack(dynamic value) {
     setState(() {});
   }

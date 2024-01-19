@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import '../user/user_data.dart';
-import '../widgets/appbar_widget.dart';
+import 'package:roomance/import.dart';
 import 'package:email_validator/email_validator.dart';
+
 
 // This class handles the Page to edit the Email Section of the User Profile.
 class EditEmailFormPage extends StatefulWidget {
@@ -38,16 +37,16 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 320,
-                    child: const Text(
+                    child: Text(
                       "Deine Email",
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,
                     )),
                 Padding(
-                    padding: EdgeInsets.only(top: 40),
+                    padding: const EdgeInsets.only(top: 40),
                     child: SizedBox(
                         height: 100,
                         width: 320,
@@ -60,18 +59,18 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                             return null;
                           },
                           decoration: const InputDecoration(
-                              labelText: 'Deine Email Adresse hier'),
+                              labelText: 'Deine Email Adresse:'),
                           controller: emailController,
                         ))),
                 Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: const EdgeInsets.only(top: 150),
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: SizedBox(
                           width: 320,
                           height: 50,
-                          child: ElevatedButton(
-                            onPressed: () {
+                          child: GradientElevatedButton(
+                              onPressed: () {
                               // Validate returns true if the form is valid, or false otherwise.
                               if (_formKey.currentState!.validate() &&
                                   EmailValidator.validate(
@@ -82,9 +81,10 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                             },
                             child: const Text(
                               'Speichern',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 15, color: Colors.black,
                             ),
                           ),
+                        ),
                         )))
               ]),
         ));

@@ -1,17 +1,12 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-import '../user/user_data.dart';
+import 'package:roomance/import.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
-import '../widgets/appbar_widget.dart';
-import 'package:image_picker/image_picker.dart';
 
 class EditImagePage extends StatefulWidget {
   const EditImagePage({Key? key}) : super(key: key);
 
   @override
-  _EditImagePageState createState() => _EditImagePageState();
+  State<EditImagePage> createState() => _EditImagePageState();
 }
 
 class _EditImagePageState extends State<EditImagePage> {
@@ -35,7 +30,7 @@ class _EditImagePageState extends State<EditImagePage> {
                 ),
               )),
           Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: SizedBox(
                   width: 330,
                   child: GestureDetector(
@@ -56,17 +51,17 @@ class _EditImagePageState extends State<EditImagePage> {
                     child: Image.network(user.image),
                   ))),
           Padding(
-              padding: EdgeInsets.only(top: 40),
+              padding: const EdgeInsets.only(top: 40),
               child: Align(
                   alignment: Alignment.bottomCenter,
                   child: SizedBox(
                     width: 330,
                     height: 50,
-                    child: ElevatedButton(
+                    child: GradientElevatedButton(
                       onPressed: () {},
                       child: const Text(
                         'Speichern',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15, color: Colors.white),
                       ),
                     ),
                   )))

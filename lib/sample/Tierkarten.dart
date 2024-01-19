@@ -1,3 +1,5 @@
+import '../import.dart';
+
 class TierInfo {
   final String name;
   final int alter;

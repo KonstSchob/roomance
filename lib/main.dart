@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart'; // Notwendig für Portrait Modus
 import 'import.dart';
 
-// -------------------------------MAIN
+// --- Main, startet die App 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +11,7 @@ void main() {
     runApp(const Roomance());
   });
 }
-
+// --- Lädt die erste Seite 
 class Roomance extends StatelessWidget {
   const Roomance({super.key});
 

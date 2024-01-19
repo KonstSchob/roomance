@@ -1,14 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:roomance/import.dart';
 import 'package:string_validator/string_validator.dart';
-import '../user/user_data.dart';
-import '../widgets/appbar_widget.dart';
 
-// This class handles the Page to edit the Name Section of the User Profile.
+// --- Seite, um Namen zu bearbeiten ---
+
 class EditNameFormPage extends StatefulWidget {
   const EditNameFormPage({Key? key}) : super(key: key);
 
   @override
-  EditNameFormPageState createState() {
+  State<EditNameFormPage> createState() {
     return EditNameFormPageState();
   }
 }
@@ -42,7 +41,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
               const SizedBox(
                   width: 330,
                   child: Text(
-                    "Wie ist dein Name?",
+                    "Wie lautet dein Name?",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
@@ -53,7 +52,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                      padding: EdgeInsets.fromLTRB(0, 40, 16, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 40, 16, 0),
                       child: SizedBox(
                           height: 100,
                           width: 150,
@@ -63,15 +62,15 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                               if (value == null || value.isEmpty) {
                                 return 'Bitte schreibe deinen \nVornamen';
                               } else if (!isAlpha(value)) {
-                                return 'Bitte nur Buchstaben';
+                                return 'Bitte nur Buchstaben eingeben';
                               }
                               return null;
                             },
-                            decoration: InputDecoration(labelText: 'Vorname'),
+                            decoration: const InputDecoration(labelText: 'Vorname'),
                             controller: firstNameController,
                           ))),
                   Padding(
-                      padding: EdgeInsets.fromLTRB(0, 40, 16, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 40, 16, 0),
                       child: SizedBox(
                           height: 100,
                           width: 150,
@@ -81,7 +80,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                               if (value == null || value.isEmpty) {
                                 return 'Bitte schreibe deinen \nNachnamen';
                               } else if (!isAlpha(value)) {
-                                return 'Bitte nur Buchstaben';
+                                return 'Bitte nur Buchstaben eingeben';
                               }
                               return null;
                             },
@@ -92,26 +91,24 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                 ],
               ),
               Padding(
-                  padding: EdgeInsets.only(top: 150),
+                  padding: const EdgeInsets.only(top: 150),
                   child: Align(
                       alignment: Alignment.bottomCenter,
                       child: SizedBox(
                         width: 330,
                         height: 50,
-                        child: ElevatedButton(
+                        child: GradientElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate() &&
                                 isAlpha(firstNameController.text +
                                     secondNameController.text)) {
-                              updateUserValue(firstNameController.text +
-                                  " " +
-                                  secondNameController.text);
+                              updateUserValue("${firstNameController.text} ${secondNameController.text}");
                               Navigator.pop(context);
                             }
                           },
                           child: const Text(
                             'Speichern',
-                            style: TextStyle(fontSize: 15),
+                            style: TextStyle(fontSize: 15, color: Colors.black),
                           ),
                         ),
                       )))

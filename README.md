@@ -8,12 +8,13 @@
 - 4 Seiten fertig/ 2 in Arbeit/ 2 Seiten stehen noch aus
 - Probleme: Scrollbarer Screen, Button implementierung in Swipe Funktionen
 - Screens/dateien ordentlich benennen
-- Seiten: Einstellungen/ Matches / Profil
+- Seiten: Matches
 - Mehr dynamische Positionierungen -> Erledigt .ML -> nicht erledigt .K
 
-# roomance
-
-Eine wundervolle App
+# Custom Dependencies:
+Da manche der verwendeten Packages verändert werden mussten, 
+sind die lokalen Versionen im Ordner lib/customdependencies gespeichert. 
+Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/UserProfile zu finden.
 
 ## Getting Started
 

@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:roomance/import.dart';
 import 'package:string_validator/string_validator.dart';
-import '../user/user_data.dart';
-import '../widgets/appbar_widget.dart';
 
-// This class handles the Page to edit the Phone Section of the User Profile.
+
+// --- Seite, um Telefonnummer zu bearbeiten ---
 class EditPhoneFormPage extends StatefulWidget {
   const EditPhoneFormPage({Key? key}) : super(key: key);
   @override
-  EditPhoneFormPageState createState() {
+  State<EditPhoneFormPage> createState() {
     return EditPhoneFormPageState();
   }
 }
@@ -24,12 +23,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
   }
 
   void updateUserValue(String phone) {
-    String formattedPhoneNumber = "(" +
-        phone.substring(0, 3) +
-        ") " +
-        phone.substring(3, 6) +
-        "-" +
-        phone.substring(6, phone.length);
+    String formattedPhoneNumber = "${phone.substring(0, 4)} ${phone.substring(4, 7)} ${phone.substring(7, phone.length)}";
     user.phone = formattedPhoneNumber;
   }
 
@@ -51,7 +45,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     )),
                 Padding(
-                    padding: EdgeInsets.only(top: 40),
+                    padding: const EdgeInsets.only(top: 40),
                     child: SizedBox(
                         height: 100,
                         width: 320,
@@ -73,13 +67,13 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                           ),
                         ))),
                 Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: const EdgeInsets.only(top: 150),
                     child: Align(
                         alignment: Alignment.bottomCenter,
-                        child: SizedBox(
-                          width: 320,
+                        child: SizedBox( //TODO Größe einstellen
+                          width: 200,
                           height: 50,
-                          child: ElevatedButton(
+                          child: GradientElevatedButton(
                             onPressed: () {
                               // Validate returns true if the form is valid, or false otherwise.
                               if (_formKey.currentState!.validate() &&
@@ -90,7 +84,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                             },
                             child: const Text(
                               'Speichern',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 15, color: Colors.black),
                             ),
                           ),
                         )))
