@@ -1,4 +1,4 @@
-import 'import.dart';
+import 'Funktionsbausteine/import.dart';
 
 //--------------------------------------Erster Screen INTRO---------------------------------------------//
 class Startseite1 extends StatelessWidget {

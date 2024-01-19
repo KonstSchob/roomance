@@ -1,4 +1,4 @@
-import 'import.dart';
+import 'Funktionsbausteine/import.dart';
 
 //--------------------------------- Start Seite 2 mit Anmeldung --------------------------------//
 

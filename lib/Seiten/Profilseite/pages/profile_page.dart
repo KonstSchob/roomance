@@ -1,16 +1,16 @@
 import 'dart:async';
-import 'package:roomance/import.dart';
+import 'package:roomance/Funktionsbausteine/import.dart';
 
 // --- Erstellen und Verwalten der Profilseite ---
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class Profil extends StatefulWidget {
+  const Profil({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<Profil> createState() => _ProfilState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     final user = UserData.myUser;

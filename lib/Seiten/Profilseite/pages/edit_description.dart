@@ -1,4 +1,4 @@
-import 'package:roomance/import.dart';
+import 'package:roomance/Funktionsbausteine/import.dart';
 
 
 // --- Seite, um Beschreibung zu bearbeiten ---

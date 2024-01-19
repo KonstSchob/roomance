@@ -1,4 +1,4 @@
-import 'package:roomance/import.dart';
+import 'package:roomance/Funktionsbausteine/import.dart';
 
 // --- Erzeugt einen ElevatedButton mit roomance Gradient als Hintergrund
 class GradientElevatedButton extends StatelessWidget {

@@ -1,4 +1,4 @@
-import '../import.dart';
+import '../Funktionsbausteine/import.dart';
 
 class TierInfo {
   final String name;

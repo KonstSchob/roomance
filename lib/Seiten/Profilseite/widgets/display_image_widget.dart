@@ -1,4 +1,4 @@
-import 'package:roomance/import.dart';
+import 'package:roomance/Funktionsbausteine/import.dart';
 
 // Modifizierte DisplayImage Klasse, um gradient und lokale Bilder zu verwenden
 

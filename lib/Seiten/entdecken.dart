@@ -1,64 +1,58 @@
-import '../import.dart';
+import '../Funktionsbausteine/import.dart';
 
 //---------------------------------------------Screen Entdecken--------------------------------------------//
 
-class EntdeckenScreen extends StatelessWidget {
-  const EntdeckenScreen({super.key});
+class Entdecken extends StatelessWidget {
+  const Entdecken({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0,),
+              child: Image.asset(
+                'assets/images/logo2.png',
+                fit: BoxFit.contain,
+                height: 48,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFF24C3D),
+                      Color(0xFFFECB2D)
+                    ], // Farbverlauf
+                  ).createShader(bounds);
+                },
+                child: const Text(
+                  'roomance',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontFamily: 'Gudea',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -4,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       extendBody: true,
       body: Stack(
         children: [
-          // Hauptinhalt der Seite
-
-          // Logo in Farbe oben links mit eigener Position --> Eventuell dynamisch Erledigt .ML
-          Positioned(
-            top: 55,
-            left: MediaQuery.of(context).size.width / 3 - 120,
-            child: Image.asset(
-              'assets/images/logo2.png',
-              width: 45,
-              height: 48,
-            ),
-          ),
-
-          // Schriftzug "roomance" in der oberen linken Ecke
-          Positioned(
-            top: 55,
-            left: MediaQuery.of(context).size.width / 3 - 74,
-            child: Row(
-              children: [
-                ShaderMask(
-                  shaderCallback: (Rect bounds) {
-                    return const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFF24C3D),
-                        Color(0xFFFECB2D)
-                      ], // Farbverlauf
-                    ).createShader(bounds);
-                  },
-                  child: const Text(
-                    'roomance',
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontFamily: 'Gudea',
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -4,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
           // --- Inhalt ---
-
           Positioned( // Ausrichtung Bild Party
             left: MediaQuery.of(context).size.width / 3 -
                 128, 
@@ -225,7 +219,7 @@ class EntdeckenScreen extends StatelessWidget {
           Positioned(
             //Bild "Du suchst nach einem Zimmer"
             left: MediaQuery.of(context).size.width / 2 - 195,
-            top: 127,
+            top: 20,
             child: SizedBox(
               width: 390,
               height: 250,

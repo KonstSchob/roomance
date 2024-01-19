@@ -1,4 +1,4 @@
-import '../import.dart';
+import '../Funktionsbausteine/import.dart';
 
 // SEITE MATCHES --------------------------------------------------  TODO Scrollbar machen und dynamische Liste
 class Matches extends StatelessWidget {
@@ -6,50 +6,49 @@ class Matches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: null, // TODO Implement
-      // --- Logo ---  
-      // Stack(
-      //   children: [
-      //     Positioned(
-      //       top: 55,
-      //       left: MediaQuery.of(context).size.width / 3 - 120,
-      //       child: Image.asset(
-      //         'assets/images/logo2.png',
-      //         width: 45,
-      //         height: 48,
-      //       ),
-      //     ),
-      //     Positioned(
-      //       top: 55,
-      //       left: MediaQuery.of(context).size.width / 3 - 74,
-      //       child: Row(
-      //         children: [
-      //           ShaderMask(
-      //             shaderCallback: (Rect bounds) {
-      //               return const LinearGradient(
-      //                 begin: Alignment.topCenter,
-      //                 end: Alignment.bottomCenter,
-      //                 colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)],
-      //               ).createShader(bounds);
-      //             },
-      //             child: const Text(
-      //               'roomance',
-      //               style: TextStyle(
-      //                 fontSize: 48,
-      //                 fontFamily: 'Gudea',
-      //                 fontWeight: FontWeight.w400,
-      //                 letterSpacing: -4,
-      //                 color: Colors.white,
-      //               ),
-      //             ),
-      //           ),
-      //         ],
-      //       ),
-      //     ),
-      //   ],
-      // ),
-      body: Matchliste(), 
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0,),
+              child: Image.asset(
+                'assets/images/logo2.png',
+                fit: BoxFit.contain,
+                height: 48,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFF24C3D),
+                      Color(0xFFFECB2D)
+                    ], // Farbverlauf
+                  ).createShader(bounds);
+                },
+                child: const Text(
+                  'roomance',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontFamily: 'Gudea',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -4,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: const Matchliste(), 
             
           // Positioned( // Match 2
           //   left: MediaQuery.of(context).size.width / 2 - 195,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../import.dart';
+import '../Funktionsbausteine/import.dart';
 
 // -----------------------------------------------SEITE CHAT-----------------------------------------//
 
@@ -9,62 +9,50 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       extendBody: true,
-      body: Stack(
-        children: [
-          Positioned
-          (
-            top: 55,
-            left: MediaQuery.of(context).size.width / 3 - 120 , 
-            child: Image.asset
-            (
-              'assets/images/logo2.png',
-              width: 45,
-              height: 48,
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0,),
+              child: Image.asset(
+                'assets/images/logo2.png',
+                fit: BoxFit.contain,
+                height: 48,
+              ),
             ),
-          ),
-
-          // Schriftzug "roomance" in der oberen linken Ecke
-          Positioned
-          (
-            top: 55,
-            left: MediaQuery.of(context).size.width / 3 - 74 ,
-            child: Row
-            (
-              children:
-               [
-                ShaderMask
-                (
-                  shaderCallback: (Rect bounds) 
-                  {
-                    return const LinearGradient
-                    (
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Color(0xFFF24C3D), Color(0xFFFECB2D)], // Farbverlauf
-                    ).createShader(bounds);
-                  },
-                  child: const Text
-                  (
-                    'roomance',
-                    style: TextStyle
-                    (
-                      fontSize: 48,
-                      fontFamily: 'Gudea',
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -4,
-                      color: Colors.white,
-                    ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFF24C3D),
+                      Color(0xFFFECB2D)
+                    ], // Farbverlauf
+                  ).createShader(bounds);
+                },
+                child: const Text(
+                  'roomance',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontFamily: 'Gudea',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -4,
+                    color: Colors.white,
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-
-
-          // ------------------------------ bis hier gewohnter Hintergrund
-
+          ],
+        ),
+      ),
+      body: Stack(
+        children: [
           // ----------------------------Texteingabefeld mit TextField
           Positioned(
             bottom: 80,
@@ -96,7 +84,8 @@ class Chat extends StatelessWidget {
                         color: Colors.black, // Textfarbe im TextField
                       ),
                       decoration: InputDecoration(
-                        hintText: 'Schreibe eine Nachricht', // Inhalt Textfenster
+                        hintText:
+                            'Schreibe eine Nachricht', // Inhalt Textfenster
                         hintStyle: TextStyle(
                           color: Color(0xFFA1A1A1),
                           fontSize: 13,
@@ -112,13 +101,13 @@ class Chat extends StatelessWidget {
                   SizedBox(
                     width: 24,
                     height: 24,
-                    child: Image.asset('assets/images/send.png'), // Logo rechts im Schriftfeld-> Papierflieger
+                    child: Image.asset(
+                        'assets/images/send.png'), // Logo rechts im Schriftfeld-> Papierflieger
                   ),
                   const SizedBox(width: 10),
                   const SizedBox(
                     width: 24,
                     height: 24,
-                   
                   ),
                 ],
               ),
@@ -129,7 +118,11 @@ class Chat extends StatelessWidget {
     );
   }
 
-  Widget buildIconButton({required String label, required String imagePath, double scale = 1.0, Function()? onPressed}) {
+  Widget buildIconButton(
+      {required String label,
+      required String imagePath,
+      double scale = 1.0,
+      Function()? onPressed}) {
     return IconButton(
       onPressed: onPressed,
       icon: Transform.scale(

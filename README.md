@@ -10,11 +10,12 @@
 - Screens/dateien ordentlich benennen
 - Seiten: Matches
 - Mehr dynamische Positionierungen -> Erledigt .ML -> nicht erledigt .K
+- Swipen: Aktueller Stand des Swipens speichern, wenn Seite gewechselt wird
 
 # Custom Dependencies:
 Da manche der verwendeten Packages verändert werden mussten, 
 sind die lokalen Versionen im Ordner lib/customdependencies gespeichert. 
-Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/UserProfile zu finden.
+Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/Profil zu finden.
 
 ## Getting Started
 

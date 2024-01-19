@@ -1,4 +1,4 @@
-import 'package:roomance/import.dart';
+import 'package:roomance/Funktionsbausteine/import.dart';
 import 'package:string_validator/string_validator.dart';
 
 
