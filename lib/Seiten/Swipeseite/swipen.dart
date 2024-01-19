@@ -115,15 +115,7 @@ class _SwipenState extends State<Swipen> {
           ),
         ),
         body: Stack(children: [
-          // Untere Buttons ausrichten
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Swipebuttons(
-                  _matchEngine), // Übergabe an Klasse für die Buttons
-            ),
-          ),
+          
           SwipeCards(
             matchEngine: _matchEngine!,
             itemBuilder: (BuildContext context, int index) {
@@ -185,6 +177,15 @@ class _SwipenState extends State<Swipen> {
               // );
               // Overlay.of(context)!.insert(overlayEntry);
             },
+          ),
+          // Untere Buttons ausrichten
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Swipebuttons(
+                  _matchEngine), // Übergabe an Klasse für die Buttons
+            ),
           ),
         ]));
   }
