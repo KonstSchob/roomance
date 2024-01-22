@@ -33,7 +33,7 @@ class _SwipenState extends State<Swipen> {
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
 
     // Entfernt das Overlay nach kurzer Zeit
     Future.delayed(const Duration(milliseconds: 800), () {

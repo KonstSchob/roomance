@@ -132,7 +132,7 @@ class SecondScreen extends StatelessWidget {
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              "assets/images/logo1.png"), // TODO einheitlich ordner machen
+                              "assets/images/logo1.png"),
                           fit: BoxFit.fill,
                         ),
                       ),

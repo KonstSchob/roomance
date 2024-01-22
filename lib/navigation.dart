@@ -40,6 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.done_all,
@@ -57,6 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.dashboard_rounded,
@@ -67,8 +69,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             // Swipen
             selectedIcon: Image(
-              image: AssetImage(
-                  'assets/images/logoicon.png'),
+              image: AssetImage('assets/images/logoicon.png'),
               width: 50,
               height: 50,
             ),
@@ -90,10 +91,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   end: Alignment.bottomCenter,
                 ),
                 size: 30,
+                offset: Offset(0, 0),
               ),
             ),
             icon: Badge(
-              label: Text('-1'), 
+              label: Text('-1'),
               child: Icon(
                 Icons.chat_bubble_outline_rounded,
                 size: 30,
@@ -111,6 +113,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.person_outline,
@@ -125,7 +128,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const Entdecken(),
         const Swipen(),
         const Chat(),
-        const Profil(), 
+        const Profil(),
       ][currentPageIndex],
     );
   }

@@ -1,6 +1,6 @@
 import '../Funktionsbausteine/import.dart';
 
-// SEITE MATCHES --------------------------------------------------  TODO Scrollbar machen und dynamische Liste
+// --- Seite Matches ---
 class Matches extends StatefulWidget {
   const Matches({Key? key}) : super(key: key);
 
@@ -81,7 +81,7 @@ class _MatchlisteState extends State<Matchliste> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBody: true, // TODO Braucht man das?
+        extendBody: true,
         body: matchliste.isEmpty
             ? const Center(
                 child: Text(
