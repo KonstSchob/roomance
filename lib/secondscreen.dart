@@ -1,5 +1,5 @@
 import 'Funktionsbausteine/import.dart';
-
+// TODO LAYOUT FIXEN
 // --- Startseite 2 mit Anmeldung ---
 
 class SecondScreen extends StatelessWidget {
@@ -131,8 +131,7 @@ class SecondScreen extends StatelessWidget {
                       height: 46,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(
-                              "assets/images/logo1.png"),
+                          image: AssetImage("assets/images/logo1.png"),
                           fit: BoxFit.fill,
                         ),
                       ),

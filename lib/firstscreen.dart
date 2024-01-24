@@ -1,6 +1,6 @@
 import 'Funktionsbausteine/import.dart';
 
-// --- Startseite1 mit Logo ---
+// --- Startseite 1 mit Logo ---
 class Startseite1 extends StatelessWidget {
   const Startseite1({super.key});
 
@@ -65,8 +65,7 @@ class Startseite1 extends StatelessWidget {
                 fontSize: 48,
                 fontFamily: 'Gudea',
                 fontWeight: FontWeight.w400,
-                letterSpacing:
-                    -4, 
+                letterSpacing: -4,
               ),
             ),
           ],

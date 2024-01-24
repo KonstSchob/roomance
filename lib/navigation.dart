@@ -3,7 +3,7 @@ import 'package:roomance/Funktionsbausteine/import.dart';
 import 'Seiten/Profilseite/pages/profile_page.dart';
 
 // --- Code, um Navigation der Hauptseiten zu handeln ---
-
+// TODO Standardseite ist swipen
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 

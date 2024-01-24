@@ -115,7 +115,6 @@ class _SwipenState extends State<Swipen> {
           ),
         ),
         body: Stack(children: [
-          
           SwipeCards(
             matchEngine: _matchEngine!,
             itemBuilder: (BuildContext context, int index) {
