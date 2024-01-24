@@ -1,5 +1,5 @@
 name: roomance
-description: A new Flutter project.
+description: WG-Suche einfach gemacht.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -35,8 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.13.1
-  gradient_icon: 
-    path: 'lib/customdependencies/gradient-icon'
+  gradient_icon: ^2.0.9
   image_picker: 1.0.7
   email_validator: ^2.0.1
   string_validator: ^0.3.0

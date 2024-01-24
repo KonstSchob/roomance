@@ -107,6 +107,7 @@ class _ProfilState extends State<Profil> {
                           end: Alignment.bottomCenter,
                         ),
                         size: 40.0,
+                        offset: Offset(0, 0),
                       )
                     ]))),
           ]));
@@ -165,6 +166,7 @@ class _ProfilState extends State<Profil> {
                         end: Alignment.bottomCenter,
                       ),
                       size: 40.0,
+                      offset: Offset(0, 0),
                     )
                   ],
                 ),

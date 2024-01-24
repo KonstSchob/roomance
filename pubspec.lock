@@ -339,10 +339,11 @@ packages:
   gradient_icon:
     dependency: "direct main"
     description:
-      path: "lib/customdependencies/gradient-icon"
-      relative: true
-    source: path
-    version: "2.0.8"
+      name: gradient_icon
+      sha256: "5852c1f44825e49d479c91602b5e9e17a4fbc49af69ac314b1f906b0c62c6193"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
   graphs:
     dependency: transitive
     description:

@@ -40,6 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.done_all,
@@ -57,6 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.dashboard_rounded,
@@ -91,6 +93,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   end: Alignment.bottomCenter,
                 ),
                 size: 30,
+                offset: Offset(0, 0),
               ),
             ),
             icon: Badge(
@@ -112,6 +115,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 end: Alignment.bottomCenter,
               ),
               size: 30,
+              offset: Offset(0, 0),
             ),
             icon: Icon(
               Icons.person_outline,

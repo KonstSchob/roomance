@@ -6,11 +6,6 @@ Dieses Repository kann mit Git geklont werden und mit flutter run in VS Code lok
 
 Stattdessen kann die beigefügt .apk auch direkt installiert werden. Eventuell muss hierfür die Installation aus Unbekannten Quellen erlaubt werden. Bei der Installation tritt ein Google Play Protect Dialog auf, da diese App nicht aus dem Playstore kommt und verifiziert wurde. Hier muss auf "Weitere Details" gedrückt werden und anschließend auf "Trotzdem installieren".
 
-# Erklärung zu den Custom Dependencies:
-Da manche der verwendeten Packages verändert werden mussten, 
-sind die lokalen Versionen im Ordner lib/customdependencies gespeichert. 
-Die Profilseite basiert auf [diesem Projekt](https://github.com/ilagazo/Flutter_UserProfile). Sie wurde von uns aber stark angepasst, um dem roomance-Design gerecht zu werden. Die verwendeten Dateien sind im Ordner lib/Seiten/Profilseite zu finden.
-
 # Todo (Weitere Verbesserungen oder Ideen):
 - Logo und dessen Implementierungen verbessern
 - Darstellung dynamischer ausrichten, mehr Responsive Design
