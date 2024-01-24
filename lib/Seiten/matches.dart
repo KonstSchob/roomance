@@ -12,13 +12,17 @@ class _MatchesState extends State<Matches> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.only(
                 left: 8.0,
+                bottom: 10,
               ),
               child: Image.asset(
                 'assets/images/logo2.png',
@@ -58,7 +62,6 @@ class _MatchesState extends State<Matches> {
     );
   }
 }
-// TODO LAYOUT TESTEN
 
 class Matchliste extends StatefulWidget {
   final List<WG> wgliste = WGDaten().wgliste;
@@ -82,6 +85,7 @@ class _MatchlisteState extends State<Matchliste> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         extendBody: true,
         body: matchliste.isEmpty
             ? const Center(
@@ -95,173 +99,88 @@ class _MatchlisteState extends State<Matchliste> {
                 ),
               )
             : ListView.builder(
-                padding: const EdgeInsets.only(
-                    top: 15), //TODO implement padding/formatting
                 itemCount: matchliste.length,
                 itemBuilder: (context, index) {
-                  return Stack(
-                    children: [
-                      Container(
-                        //Bild der Wohnung
-                        padding: const EdgeInsets.all(15),
-                        // alignment: Alignment.topCenter,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Colors.black,
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
+                  return AspectRatio(
+                    aspectRatio: 1.6,
+                    child: Card(
+                      surfaceTintColor: Colors.white,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
+                      elevation: 10,
+                      shadowColor: Colors.black,
+                      clipBehavior: Clip.hardEdge,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.bottomLeft,
+                        children: [
+                          Container(
+                            constraints: const BoxConstraints.expand(),
+                            // Bild der WG, durch Gradient verdunkelt
+                            child: ShaderMask(
+                              shaderCallback: (rect) => const LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [
+                                  Colors.black,
+                                  Colors.transparent,
+                                ],
+                              ).createShader(rect),
+                              blendMode: BlendMode.darken,
+                              child: Image(
+                                fit: BoxFit.cover,
+                                image: matchliste[index].image,
+                              ),
+                            ),
                           ),
-                        ),
-                        child: Image(
-                          image: matchliste[index].image, //Verwendetes Bild
-                        ),
+
+                          // Beschreibung der WG
+                          Container(
+                            padding:
+                                const EdgeInsets.only(left: 15, bottom: 15),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                AutoSizeText(
+                                  matchliste[index].location,
+                                  textAlign: TextAlign.left,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 37,
+                                    fontFamily: 'Mulish',
+                                    fontWeight: FontWeight.w700,
+                                    height: 0,
+                                  ),
+                                ),
+                                AutoSizeText(
+                                  '${matchliste[index].people} Personen, ${matchliste[index].genderString}',
+                                  textAlign: TextAlign.left,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'Mulish',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                                AutoSizeText(
+                                  '${matchliste[index].distance} km entfernt',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'Mulish',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15, bottom: 15),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              matchliste[index].location,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 37,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            Text(
-                              '${matchliste[index].people} Personen, ${matchliste[index].genderString}',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              '${matchliste[index].distance} km entfernt',
-                              style: const TextStyle(
-                                color: Colors
-                                    .white, // TODO lieber grauton  color: Color(0xFFAEAEAE) ???
-                                fontSize: 18,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // SizedBox(
-                      //   width: 357,
-                      //   height: 222,
-                      //   child: Stack(
-                      //     children: [
-                      //       Positioned(
-                      //         // Name bzw. Straße der Wohnung
-                      //         left: 15,
-                      //         top: 30,
-                      //         child: SizedBox(
-                      //           height: 89,
-                      //           child: Text(
-                      //             matchliste[index].location,
-                      //             style: const TextStyle(
-                      //               color: Color.fromARGB(255, 255, 255, 255),
-                      //               fontSize: 30,
-                      //               fontFamily: 'Mulish',
-                      //               fontWeight: FontWeight.w800,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       Positioned(
-                      //         //Beschreibung der Wohnung
-                      //         left: 15,
-                      //         top: 177,
-                      //         child: SizedBox(
-                      //           width: 178,
-                      //           height: 36,
-                      //           child: Text(
-                      //             '${matchliste[index].people} Personen, ${matchliste[index].genderString}\n${matchliste[index].distance} km entfernt',
-                      //             style: const TextStyle(
-                      //               color: Color(0xFFAEAEAE),
-                      //               fontSize: 15,
-                      //               fontFamily: 'Mulish',
-                      //               fontWeight: FontWeight.w600,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       Positioned(
-                      //         //Knopf Chat
-                      //         left: MediaQuery.of(context).size.width - 130,
-                      //         top: 195,
-                      //         child: SizedBox(
-                      //           width: 72,
-                      //           height: 25,
-                      //           child: Stack(
-                      //             children: [
-                      //               Positioned(
-                      //                 left: 0,
-                      //                 top: 0,
-                      //                 child: Container(
-                      //                   width: 72,
-                      //                   height: 25,
-                      //                   decoration: ShapeDecoration(
-                      //                     color: const Color(0xFFFCFCFC),
-                      //                     shape: RoundedRectangleBorder(
-                      //                       borderRadius:
-                      //                           BorderRadius.circular(15),
-                      //                     ),
-                      //                   ),
-                      //                 ),
-                      //               ),
-                      //               Positioned(
-                      //                 left: 2,
-                      //                 top: -6,
-                      //                 child: ElevatedButton(
-                      //                   onPressed: () {
-                      //                     Navigator.push(
-                      //                       context,
-                      //                       MaterialPageRoute(
-                      //                           builder: (context) =>
-                      //                               const Chat()),
-                      //                     );
-                      //                   },
-                      //                   style: ElevatedButton.styleFrom(
-                      //                     backgroundColor: Colors.transparent,
-                      //                     elevation: 0,
-                      //                     shape: RoundedRectangleBorder(
-                      //                       borderRadius:
-                      //                           BorderRadius.circular(15),
-                      //                     ),
-                      //                   ),
-                      //                   child: const Text(
-                      //                     'Chat',
-                      //                     textAlign: TextAlign.center,
-                      //                     style: TextStyle(
-                      //                       color: Colors.black,
-                      //                       fontSize: 15,
-                      //                       fontFamily: 'Mulish',
-                      //                       fontWeight: FontWeight.w700,
-                      //                       height: 0.06,
-                      //                     ),
-                      //                   ),
-                      //                 ),
-                      //               ),
-                      //             ],
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                    ],
+                    ),
                   );
                 }));
   }

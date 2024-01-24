@@ -1,5 +1,7 @@
 import '../../Funktionsbausteine/import.dart';
 
+// --- Seite Swipen ---
+
 class Swipen extends StatefulWidget {
   const Swipen({Key? key, this.title}) : super(key: key);
 
@@ -14,32 +16,6 @@ class _SwipenState extends State<Swipen> {
   MatchEngine? _matchEngine;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   List<WG> wgliste = WGDaten().wgliste;
-
-  // Popup von icon, nachdem geswiped wurde
-  void _showIconOverlay(String imagePath,
-      {bool isNope = false, bool isLike = false}) {
-    OverlayEntry overlayEntry;
-    overlayEntry = OverlayEntry(
-      builder: (BuildContext context) => Positioned(
-        top: 300,
-        left: isNope ? 50 : null, // Set left for Nope
-        right: isLike ? 50 : null, // Set right for Like
-        child: Material(
-          color: Colors.transparent,
-          child: Transform.rotate(
-            angle: isNope ? 0.87 : (isLike ? -0.87 : 0.0),
-            child: Image.asset(imagePath, width: 100, height: 50),
-          ),
-        ),
-      ),
-    );
-    Overlay.of(context).insert(overlayEntry);
-
-    // Entfernt das Overlay nach kurzer Zeit
-    Future.delayed(const Duration(milliseconds: 800), () {
-      overlayEntry.remove();
-    });
-  }
 
   // Verarbeitet das Swipen und Wechseln der WGKarten
   @override
@@ -68,6 +44,32 @@ class _SwipenState extends State<Swipen> {
     super.initState();
   }
 
+  // Popup von icon, nachdem geswiped wurde
+  void _showIconOverlay(String imagePath,
+      {bool isNope = false, bool isLike = false}) {
+    OverlayEntry overlayEntry;
+    overlayEntry = OverlayEntry(
+      builder: (BuildContext context) => Positioned(
+        top: 300,
+        left: isNope ? 50 : null, // Set left for Nope
+        right: isLike ? 50 : null, // Set right for Like
+        child: Material(
+          color: Colors.transparent,
+          child: Transform.rotate(
+            angle: isNope ? 0.87 : (isLike ? -0.87 : 0.0),
+            child: Image.asset(imagePath, width: 100, height: 50),
+          ),
+        ),
+      ),
+    );
+    Overlay.of(context).insert(overlayEntry);
+
+    // Entfernt das Overlay nach kurzer Zeit
+    Future.delayed(const Duration(milliseconds: 800), () {
+      overlayEntry.remove();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,6 +81,7 @@ class _SwipenState extends State<Swipen> {
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,
+                  bottom: 10,
                 ),
                 child: Image.asset(
                   'assets/images/logo2.png',

@@ -1,5 +1,6 @@
 import 'package:roomance/Funktionsbausteine/import.dart';
 import 'package:path_provider/path_provider.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 
 // --- Seite, um Profilbild zu bearbeiten ---

@@ -7,9 +7,9 @@ Dieses Repository kann mit Git geklont werden und mit flutter run in VS Code lok
 Stattdessen kann die beigefügt .apk auch direkt installiert werden. Eventuell muss hierfür die Installation aus Unbekannten Quellen erlaubt werden. Bei der Installation tritt ein Google Play Protect Dialog auf, da diese App nicht aus dem Playstore kommt und verifiziert wurde. Hier muss auf "Weitere Details" gedrückt werden und anschließend auf "Trotzdem installieren".
 
 # Todo (Weitere Verbesserungen oder Ideen):
-- Logo und dessen Implementierungen verbessern
-- Darstellung dynamischer ausrichten, mehr Responsive Design
+- Darstellung dynamischer ausrichten, mehr Responsive Design testen
 - Swipen: Aktueller Stand des Swipens speichern, wenn Seite gewechselt wird
+    - Zurück-Button belegen
 - Spezielle Funktionen: 
     - Matches implementieren
     - Chat Funktion vervollständigen

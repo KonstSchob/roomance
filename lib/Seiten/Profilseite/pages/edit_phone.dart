@@ -70,8 +70,8 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                     padding: const EdgeInsets.only(top: 150),
                     child: Align(
                         alignment: Alignment.bottomCenter,
-                        child: SizedBox( //TODO Größe aller Buttons einstellen
-                          width: 200,
+                        child: SizedBox( 
+                          width: 350,
                           height: 50,
                           child: GradientElevatedButton(
                             onPressed: () {

@@ -6,8 +6,8 @@ class Startseite1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Funktion für die Verzögerung und Navigation zur nächsten Seite
 
+    // Funktion für die Verzögerung und Navigation zur nächsten Seite
     // ignore: no_leading_underscores_for_local_identifiers
     void _navigateToNextPage() {
       Future.delayed(const Duration(seconds: 2),
@@ -25,10 +25,10 @@ class Startseite1 extends StatelessWidget {
 
     // Start der Verzögerung und Navigation beim Aufbau des Widgets
     _navigateToNextPage();
-
     return Scaffold(
+      // Container für das Hintergrunddesign
       body: Container(
-        // Container für das Hintergrunddesign
+        
         width: MediaQuery.of(context).size.width, // Füllt den ganzen Screen
         height: MediaQuery.of(context).size.height,
         clipBehavior: Clip.antiAlias,
@@ -40,36 +40,30 @@ class Startseite1 extends StatelessWidget {
           ),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
         ),
-        child: Row(
-          //Logo und Schrift werden in der Mitte des Bildschirms angezeigt
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: Container(
-                width: 83.50, // Wichtiger Wert für MediaQuery
-                height: 48,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        "assets/images/logo1.png"), // LoGo in der Mitte
+        // roomance Text + Logo
+        child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/logo1.png',
+                    fit: BoxFit.contain,
+                    height: 96,
                   ),
-                ),
+                  const Text(
+                    'roomance',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 48,
+                      fontFamily: 'Gudea',
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: -4,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
-            // Positionierter Schriftzug
-            const Text(
-              'roomance', // Schriftzug Mitte unter Logo
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 48,
-                fontFamily: 'Gudea',
-                fontWeight: FontWeight.w400,
-                letterSpacing: -4,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

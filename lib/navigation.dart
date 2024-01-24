@@ -3,8 +3,9 @@ import 'package:roomance/Funktionsbausteine/import.dart';
 import 'Seiten/Profilseite/pages/profile_page.dart';
 
 // --- Code, um Navigation der Hauptseiten zu handeln ---
-// TODO Standardseite ist swipen
+
 class BottomNavBar extends StatefulWidget {
+  
   const BottomNavBar({super.key});
 
   @override
@@ -12,7 +13,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 2; // Swipe-Seite ist Standardseite
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +70,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             // Swipen
             selectedIcon: Image(
-              alignment: Alignment
-                  .bottomCenter, // TODO testen, auf Höhe der Schrift bekommen
               image: AssetImage('assets/images/logoicon.png'),
               width: 50,
               height: 50,

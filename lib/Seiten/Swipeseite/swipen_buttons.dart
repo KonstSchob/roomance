@@ -25,9 +25,8 @@ class Swipebuttons extends StatelessWidget {
           ),
         ),
         IconButton(
-          //Zu zurück-knopf umwandeln
           onPressed: () {
-            _matchEngine!.currentItem?.superLike(); //Führt Zurück Geste aus
+            // TODO Nicht implementiert: Zurück Geste ausführen
           },
           icon: Container(
             width: 60,

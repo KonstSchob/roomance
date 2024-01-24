@@ -16,7 +16,7 @@ class Chat extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(
-                left: 8.0,
+                left: 8.0, bottom: 10,
               ),
               child: Image.asset(
                 'assets/images/logo2.png',

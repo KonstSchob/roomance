@@ -2,6 +2,7 @@
 export 'dart:io';
 export 'package:flutter/material.dart';
 export 'package:image_picker/image_picker.dart';
+export 'package:auto_size_text/auto_size_text.dart';
 
 // Imports für die äußere Struktur
 export '../main.dart';

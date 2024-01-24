@@ -27,11 +27,11 @@ class _ProfilState extends State<Profil> {
               child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(
-                    'Dein Profil', //TODO wo ist das hin?
+                    'Dein Profil',
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(0, 0, 0, 0),
+                      color: Colors.black,
                     ),
                   ))),
           InkWell(
@@ -107,12 +107,12 @@ class _ProfilState extends State<Profil> {
                           end: Alignment.bottomCenter,
                         ),
                         size: 40.0,
-                        offset: Offset(0, 0),
+                        offset: Offset(0, -8),
                       )
                     ]))),
           ]));
 
-  // Zeigt den "Erzähl was über dich" Bereich an
+  // Zeigt den "Meine Beschreibung" Bereich an
   Widget buildAbout(User user) => Padding(
         padding: const EdgeInsets.only(top: 20),
         child: Column(
@@ -166,7 +166,7 @@ class _ProfilState extends State<Profil> {
                         end: Alignment.bottomCenter,
                       ),
                       size: 40.0,
-                      offset: Offset(0, 0),
+                      offset: Offset(0, -8),
                     )
                   ],
                 ),
