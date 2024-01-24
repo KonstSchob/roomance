@@ -67,8 +67,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           NavigationDestination(
             // Swipen
             selectedIcon: Image(
-              image: AssetImage(
-                  'assets/images/logoicon.png'),
+              alignment: Alignment
+                  .bottomCenter, // TODO testen, auf Höhe der Schrift bekommen
+              image: AssetImage('assets/images/logoicon.png'),
               width: 50,
               height: 50,
             ),
@@ -93,7 +94,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             icon: Badge(
-              label: Text('-1'), 
+              label: Text('-1'),
               child: Icon(
                 Icons.chat_bubble_outline_rounded,
                 size: 30,
@@ -125,7 +126,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         const Entdecken(),
         const Swipen(),
         const Chat(),
-        const Profil(), 
+        const Profil(),
       ][currentPageIndex],
     );
   }

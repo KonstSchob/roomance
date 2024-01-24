@@ -63,7 +63,7 @@ class _EditImagePageState extends State<EditImagePage> {
                       onPressed: () {},
                       child: const Text(
                         'Speichern',
-                        style: TextStyle(fontSize: 15, color: Colors.white),
+                        style: TextStyle(fontSize: 15, color: Colors.black),
                       ),
                     ),
                   )))

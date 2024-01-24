@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Funktionsbausteine/import.dart';
 
-// -----------------------------------------------SEITE CHAT-----------------------------------------//
+// --- Seite Chat ---
 
 class Chat extends StatelessWidget {
   const Chat({Key? key}) : super(key: key);
@@ -14,9 +14,10 @@ class Chat extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            
             Padding(
-              padding: const EdgeInsets.only(left: 8.0,),
+              padding: const EdgeInsets.only(
+                left: 8.0,
+              ),
               child: Image.asset(
                 'assets/images/logo2.png',
                 fit: BoxFit.contain,

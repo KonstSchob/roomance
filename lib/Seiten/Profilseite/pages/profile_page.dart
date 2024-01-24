@@ -27,7 +27,7 @@ class _ProfilState extends State<Profil> {
               child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(
-                    'Dein Profil',
+                    'Dein Profil', //TODO wo ist das hin?
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
@@ -86,7 +86,9 @@ class _ProfilState extends State<Profil> {
                     onPressed: () {
                       navigateSecondPage(editPage);
                     },
-                    style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                    style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15))),
                     child: Row(children: [
                       Expanded(
                           child: Text(
@@ -135,25 +137,25 @@ class _ProfilState extends State<Profil> {
                 onPressed: () {
                   navigateSecondPage(const EditDescriptionFormPage());
                 },
-                style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
                 child: Row(
                   children: [
                     Expanded(
-                        child:
-                            Align(
-                                alignment: Alignment.topLeft,
-                            child:
-                            Text(
-                      user.aboutMeDescription.isEmpty
-                          ? 'Erzähle etwas über dich'
-                          : user
-                              .aboutMeDescription, //Überprüft, ob Textfeld leer ist
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        height: 1.4,
-                      ),
-                    ))),
+                        child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              user.aboutMeDescription.isEmpty
+                                  ? 'Erzähle etwas über dich'
+                                  : user
+                                      .aboutMeDescription, //Überprüft, ob Textfeld leer ist
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                height: 1.4,
+                              ),
+                            ))),
                     const GradientIcon(
                       icon: Icons
                           .keyboard_arrow_right, //Pfeil in roomance Farbverlauf
